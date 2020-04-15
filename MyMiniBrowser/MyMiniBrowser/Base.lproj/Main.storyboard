@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyMiniBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwf-iT-iGf">
+                                <rect key="frame" x="0.0" y="86" width="414" height="776"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOg-W6-9fJ">
+                                <rect key="frame" x="338" y="44" width="56" height="30"/>
+                                <state key="normal" title="Forward"/>
+                                <connections>
+                                    <action selector="pressForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZu-2t-Syb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMd-QV-d7L">
+                                <rect key="frame" x="20" y="44" width="46" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="pressBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ayo-35-isN"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="taN-yy-FZ0">
+                                <rect key="frame" x="79" y="44" width="256" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="KhL-89-uA9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nMd-QV-d7L" firstAttribute="width" secondItem="dOg-W6-9fJ" secondAttribute="width" multiplier="0.821429" id="4pU-gf-UE3"/>
+                            <constraint firstItem="nMd-QV-d7L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5O3-qc-mAr"/>
+                            <constraint firstItem="taN-yy-FZ0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5l4-Dl-lbs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dOg-W6-9fJ" secondAttribute="trailing" constant="20" id="7sS-Nh-eXa"/>
+                            <constraint firstItem="dOg-W6-9fJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Buc-YS-WTB"/>
+                            <constraint firstItem="taN-yy-FZ0" firstAttribute="leading" secondItem="nMd-QV-d7L" secondAttribute="trailing" constant="13" id="Hlc-K6-4Pk"/>
+                            <constraint firstItem="dOg-W6-9fJ" firstAttribute="leading" secondItem="taN-yy-FZ0" secondAttribute="trailing" constant="3" id="cd6-aP-sea"/>
+                            <constraint firstItem="nMd-QV-d7L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dpo-Za-E2s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="nMd-QV-d7L" id="SUK-vX-rsX"/>
+                        <outlet property="forwardButton" destination="dOg-W6-9fJ" id="OpK-Zq-Iic"/>
+                        <outlet property="urlTextField" destination="taN-yy-FZ0" id="myH-pi-g23"/>
+                        <outlet property="webView" destination="bwf-iT-iGf" id="ktd-B5-fly"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
