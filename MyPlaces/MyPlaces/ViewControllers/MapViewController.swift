@@ -37,6 +37,7 @@ class MapViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var navigationLabel: UILabel!
     @IBOutlet weak var mapPinImage: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
@@ -60,13 +61,15 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func goButtonPressed() {
-        mapManager.getDirection(for: mapView) { (location) in
+        mapManager.getDirection(for: mapView, and: navigationLabel) { (location) in
             self.previousLocation = location
         }
     }
     
     private func setupMapView(){
+        
         goButton.isHidden = true
+        navigationLabel.isHidden = true
         
         mapManager.checkLocationServices(mapView: mapView, segueIdentifier: incomeSegueIdentifier){
             mapManager.locationManager.delegate = self

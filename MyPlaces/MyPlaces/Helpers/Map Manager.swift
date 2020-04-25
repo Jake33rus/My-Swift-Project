@@ -103,7 +103,7 @@ class MapManager{
     }
     
     //Проложить маршрут от пользователя до объекта
-    func getDirection(for mapView: MKMapView, previousLocation: (CLLocation) -> ()) {
+    func getDirection(for mapView: MKMapView, and navigationLabel: UILabel, previousLocation: (CLLocation) -> ()) {
         
         guard let location = locationManager.location?.coordinate else {
             showAlert(title: "Error", message: "Current location is not found")
@@ -135,9 +135,10 @@ class MapManager{
                 mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
                 
                 let distance = String(format: "%.1f", route.distance/1000)
-                let timeInterval = route.expectedTravelTime
+                let timeInterval = String(format: "%d", Int((route.expectedTravelTime/60).rounded()))
                 
-                print("\(distance), \(timeInterval)")
+                navigationLabel.isHidden = false
+                navigationLabel.text = "Путь составит: \(distance) км \n ~ \(timeInterval) мин"
             }
         }
     }

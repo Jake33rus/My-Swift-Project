@@ -310,9 +310,16 @@
                                     <action selector="goButtonPressed" destination="ybi-ED-Qe9" eventType="touchUpInside" id="AAl-6t-NW2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navigation Info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dt-g0-gQg">
+                                <rect key="frame" x="20" y="198" width="374" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="5dt-g0-gQg" firstAttribute="centerX" secondItem="jUG-3G-QXn" secondAttribute="centerX" id="1Uj-os-bTm"/>
                             <constraint firstItem="YC6-Sa-eM8" firstAttribute="bottom" secondItem="MV1-x2-qcN" secondAttribute="bottom" constant="40" id="3Pf-P4-Mgr"/>
                             <constraint firstItem="HsG-zf-Uhf" firstAttribute="centerX" secondItem="jUG-3G-QXn" secondAttribute="centerX" id="4mP-dG-ayX"/>
                             <constraint firstItem="Bab-ZQ-Jmq" firstAttribute="trailing" secondItem="YC6-Sa-eM8" secondAttribute="trailing" id="82k-lT-1IO"/>
@@ -323,10 +330,13 @@
                             <constraint firstItem="kVY-WQ-5dA" firstAttribute="leading" secondItem="YC6-Sa-eM8" secondAttribute="leading" constant="20" id="PrA-Hz-Nve"/>
                             <constraint firstItem="Bab-ZQ-Jmq" firstAttribute="leading" secondItem="YC6-Sa-eM8" secondAttribute="leading" id="QAM-iL-CW6"/>
                             <constraint firstItem="YC6-Sa-eM8" firstAttribute="trailing" secondItem="Dbq-1H-ugr" secondAttribute="trailing" constant="40" id="SMN-jJ-3Td"/>
+                            <constraint firstItem="Bab-ZQ-Jmq" firstAttribute="top" secondItem="5dt-g0-gQg" secondAttribute="bottom" constant="-227" id="WWx-zn-5em"/>
                             <constraint firstItem="Uu7-MN-hdU" firstAttribute="centerX" secondItem="jUG-3G-QXn" secondAttribute="centerX" id="aTP-76-mwe"/>
+                            <constraint firstItem="5dt-g0-gQg" firstAttribute="leading" secondItem="YC6-Sa-eM8" secondAttribute="leading" constant="20" id="dVv-Ex-mn9"/>
                             <constraint firstItem="cql-fJ-6QP" firstAttribute="top" secondItem="YC6-Sa-eM8" secondAttribute="top" constant="40" id="elr-kG-zK0"/>
                             <constraint firstAttribute="bottom" secondItem="Bab-ZQ-Jmq" secondAttribute="bottom" id="fFz-Bz-YnV"/>
                             <constraint firstItem="Bab-ZQ-Jmq" firstAttribute="top" secondItem="jUG-3G-QXn" secondAttribute="top" id="ftx-Kc-bop"/>
+                            <constraint firstItem="YC6-Sa-eM8" firstAttribute="trailing" secondItem="5dt-g0-gQg" secondAttribute="trailing" constant="20" id="j7x-ih-7tx"/>
                             <constraint firstItem="Bab-ZQ-Jmq" firstAttribute="top" secondItem="kVY-WQ-5dA" secondAttribute="bottom" constant="-205" id="sN0-2N-2dh"/>
                             <constraint firstItem="YC6-Sa-eM8" firstAttribute="bottom" secondItem="HsG-zf-Uhf" secondAttribute="bottom" constant="40" id="vfr-hf-BAs"/>
                             <constraint firstItem="YC6-Sa-eM8" firstAttribute="trailing" secondItem="cql-fJ-6QP" secondAttribute="trailing" constant="40" id="vzD-zg-hpr"/>
@@ -339,6 +349,7 @@
                         <outlet property="goButton" destination="HsG-zf-Uhf" id="QRh-MZ-76S"/>
                         <outlet property="mapPinImage" destination="Uu7-MN-hdU" id="NSb-ua-ctf"/>
                         <outlet property="mapView" destination="Bab-ZQ-Jmq" id="cHY-ex-Iyr"/>
+                        <outlet property="navigationLabel" destination="5dt-g0-gQg" id="52X-Ft-7wt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmw-PD-fQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
