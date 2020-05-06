@@ -6,6 +6,10 @@
 //  Copyright © 2020 Евгений Уланов. All rights reserved.
 //
 
+import UIKit
+import Alamofire
 class MyNetworkInteractionLib {
-
+    
+    
+    }
 }
