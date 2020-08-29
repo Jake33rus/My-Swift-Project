@@ -23,7 +23,6 @@
 		5C32112324D8AB7B0041732C /* TVSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32111C24D8AB7B0041732C /* TVSceneViewController.swift */; };
 		5C32112424D8AB7B0041732C /* TVSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32111D24D8AB7B0041732C /* TVSceneInteractor.swift */; };
 		5C35B08A24B1CC1F00F6FB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C35B08924B1CC1F00F6FB0C /* AppDelegate.swift */; };
-		5C35B08C24B1CC1F00F6FB0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C35B08B24B1CC1F00F6FB0C /* SceneDelegate.swift */; };
 		5C35B09524B1CC2000F6FB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C35B09424B1CC2000F6FB0C /* Assets.xcassets */; };
 		5C35B09824B1CC2000F6FB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C35B09624B1CC2000F6FB0C /* LaunchScreen.storyboard */; };
 		5C35B0A724B1D00B00F6FB0C /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C35B0A024B1D00B00F6FB0C /* LoginPresenter.swift */; };
@@ -38,6 +37,7 @@
 		5C35B0C924B2918700F6FB0C /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C35B0C824B2918700F6FB0C /* ButtonWithImage.swift */; };
 		5C49EF6F24C5DC53002B9989 /* GeneralModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C49EF6E24C5DC53002B9989 /* GeneralModels.swift */; };
 		5C49EF7424C5F614002B9989 /* FGuidCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C49EF7324C5F614002B9989 /* FGuidCell.xib */; };
+		5C54785224F9E05300B89611 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54785124F9E05300B89611 /* MyTabBar.swift */; };
 		5C5D4BE124C0DDB6007F35A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D4BE324C0DDB6007F35A0 /* Localizable.strings */; };
 		5C5D4BE624C0DDF7007F35A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D4BE824C0DDF7007F35A0 /* Localizable.strings */; };
 		5C5D4BEB24C20E2E007F35A0 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D4BEA24C20E2E007F35A0 /* CustomSegmentedControl.swift */; };
@@ -130,7 +130,6 @@
 		5C32111D24D8AB7B0041732C /* TVSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSceneInteractor.swift; sourceTree = "<group>"; };
 		5C35B08624B1CC1F00F6FB0C /* Festle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Festle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C35B08924B1CC1F00F6FB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C35B08B24B1CC1F00F6FB0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5C35B09424B1CC2000F6FB0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C35B09724B1CC2000F6FB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C35B09924B1CC2000F6FB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Festle/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -146,6 +145,7 @@
 		5C35B0C824B2918700F6FB0C /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		5C49EF6E24C5DC53002B9989 /* GeneralModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModels.swift; sourceTree = "<group>"; };
 		5C49EF7324C5F614002B9989 /* FGuidCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FGuidCell.xib; sourceTree = "<group>"; };
+		5C54785124F9E05300B89611 /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		5C5D4BDD24C0DD57007F35A0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		5C5D4BDE24C0DD58007F35A0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5C5D4BE224C0DDB6007F35A0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -313,7 +313,6 @@
 				5CF96C3824BA55A200713EA3 /* Helpers */,
 				5C35B09F24B1CF9000F6FB0C /* Login */,
 				5C35B08924B1CC1F00F6FB0C /* AppDelegate.swift */,
-				5C35B08B24B1CC1F00F6FB0C /* SceneDelegate.swift */,
 				5C35B09424B1CC2000F6FB0C /* Assets.xcassets */,
 				5C35B09624B1CC2000F6FB0C /* LaunchScreen.storyboard */,
 				5C35B09924B1CC2000F6FB0C /* Info.plist */,
@@ -363,6 +362,7 @@
 				5C5D4BF324C3B5B5007F35A0 /* Carousel */,
 				5C5D4BEA24C20E2E007F35A0 /* CustomSegmentedControl.swift */,
 				5C32111324D839160041732C /* MyTextField.swift */,
+				5C54785124F9E05300B89611 /* MyTabBar.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -752,7 +752,6 @@
 				5C8B371424CDF7C800536BA9 /* RegistrationModels.swift in Sources */,
 				5C32112124D8AB7B0041732C /* TVSceneRouter.swift in Sources */,
 				5C5D4BFE24C3BECC007F35A0 /* UICollectionView.swift in Sources */,
-				5C35B08C24B1CC1F00F6FB0C /* SceneDelegate.swift in Sources */,
 				5C838D2624EAA54E0012B9B4 /* TourCollectionViewCell.swift in Sources */,
 				5C35B0A724B1D00B00F6FB0C /* LoginPresenter.swift in Sources */,
 				5C8B371324CDF7C800536BA9 /* RegistrationRouter.swift in Sources */,
@@ -772,6 +771,7 @@
 				5C90B7C324BB3D5D00CB90C8 /* DashboardModels.swift in Sources */,
 				5C32110D24D7365F0041732C /* EditInfoModels.swift in Sources */,
 				5C32111424D839160041732C /* MyTextField.swift in Sources */,
+				5C54785224F9E05300B89611 /* MyTabBar.swift in Sources */,
 				5C90B7B324BB3D3D00CB90C8 /* ProfileModels.swift in Sources */,
 				5C5D4BFB24C3BDCD007F35A0 /* CarouselCell.swift in Sources */,
 				5C32112024D8AB7B0041732C /* TVSceneWorker.swift in Sources */,

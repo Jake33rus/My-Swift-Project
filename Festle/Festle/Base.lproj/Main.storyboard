@@ -1248,6 +1248,7 @@
                         <outlet property="carouselTours" destination="aY1-EC-LBb" id="ZfO-oB-3Ob"/>
                         <outlet property="guidesTableView" destination="TaN-Mj-HlH" id="W5u-BO-wFg"/>
                         <outlet property="logoutButton" destination="HWX-Yb-PcR" id="gkL-p5-Mky"/>
+                        <outlet property="onlineLabel" destination="9b2-eE-pcZ" id="eHy-ZD-5SS"/>
                         <outlet property="playVideoButton" destination="cxu-5P-r3p" id="DIY-Ff-YfW"/>
                         <outlet property="topGuidesLabel" destination="kOn-3c-h7M" id="YRS-rD-Qe9"/>
                         <outlet property="toursTableView" destination="B2O-0J-kE0" id="lzS-IC-qOw"/>
@@ -1623,10 +1624,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="-719.19642857142856"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController storyboardIdentifier="tabBar" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="49e-Tb-3d3" customClass="MyTabBar" customModule="Festle" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Wfu-sm-wYa"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

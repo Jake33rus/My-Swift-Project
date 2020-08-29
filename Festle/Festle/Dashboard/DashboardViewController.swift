@@ -15,10 +15,24 @@ protocol DashboardDisplayLogic: class {
 class DashboardViewController: UIViewController, DashboardDisplayLogic {
     @IBOutlet weak var carouselTours: UICollectionView!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var onlineLabel: UILabel! {
+        didSet{
+            onlineLabel.text = NSLocalizedString("Online now", comment: "")
+        }
+    }
     @IBOutlet weak var playVideoButton: UIButton!
     @IBOutlet weak var guidesTableView: UITableView!
-    @IBOutlet weak var topGuidesLabel: UILabel!
+    @IBOutlet weak var topGuidesLabel: UILabel!{
+        didSet{
+            topGuidesLabel.text = NSLocalizedString("Top guides", comment: "")
+        }
+    }
     @IBOutlet weak var upcomingToursLabel: UILabel!
+    {
+        didSet{
+            upcomingToursLabel.text = NSLocalizedString("Upcoming tours", comment: "")
+        }
+    }
     @IBOutlet weak var toursTableView: UITableView!
     let selfToMoreGuidsSegueName = "showMoreGuides"
     let selfToMoreFestsSegueName = "showMoreTours"
@@ -71,8 +85,8 @@ class DashboardViewController: UIViewController, DashboardDisplayLogic {
     @IBAction func logoutButtonPressed(_ sender: Any) {
         if (interactor!.logoutPress()){
             let loginPage = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginViewController
-            let sceneDelegate = self.view.window?.windowScene?.delegate
-            sceneDelegate.
+            let appDelegate = UIApplication.shared.delegate
+            appDelegate?.window??.rootViewController = loginPage
         }
     }
     
