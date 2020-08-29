@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  Festle
+
+  Created by Евгений Уланов on 16.07.2020.
+  Copyright © 2020 Евгений Уланов. All rights reserved.
+*/
+"Login" = "Логин";
+"Password" = "Пароль";
+"Sign in" = "Войти";
+"Registration" = "Регистрация";
+"Other option" = "Другие опции";
+"Online now" = "Сейчас онлайн";
+"Find text" = "Поиск по городу, достопремечательности, музею или гиду";
+"Upcoming tours" = "Ближайшие туры";
+"More" = "Больше";
+"Top guides" = "Лучшие гиды";
+"guided tours" = "Проведенные туры";
+"City" = "Город:";
+"Languages" = "Языки:";
+"Contacts" = "Контакты:";
+"Viewed routes" = "Просмотренные туры";
+"Become guide" = "Стать гидом";
+"Create excursion" = "Создать экскурсию";
+"Guides" = "Гиды";
+"Excursions" = "Экскурсии";
+//Registration View
+"Privacy button" = "Конфиденциальности";
+"ViaLabel" = "или зарегистрируйтесь через";
+"Privacy Info" = "Мы не спам, мы позаботимся о вашей";
+"SignUpButton" = "Зарегистрироваться";
+"Telnumb" = "Номер телефона";
+"Email" = "Email";
+"City" = "Город";
+"Name" = "Имя";
+//EditInfo View
+"EditLabel" = "Личные данные";
+"Save" = "Сохранить";
+"Birthday" = "Дата рождения";
+"LanguagesProficiency" = "Знание языков";
+"About me" = "Обо мне";
+"FirstName" = "Имя";
+"SecondName" = "Фамилия";
+
+"Likes" = "Лайки";
+"Excursions" = "Экскурсии";
+"About guide" = "О гиде:";
+"Guided tours" = "Проведенные экскурсии";
+"Reported" = "Пожаловаться";
+"upcoming tour" = "Ближайшие туры:";

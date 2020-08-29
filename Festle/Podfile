@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Festle' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Festle
+  	pod 'SwiftEntryKit', '1.2.3'
+	pod 'IQKeyboardManagerSwift'
+	pod 'FBSDKCoreKit'  
+	pod 'FBSDKLoginKit'
+	pod 'FBSDKShareKit'
+	pod 'FBSDKPlacesKit'
+	pod 'GoogleSignIn'
+	pod 'Alamofire'
+	pod 'BATabBarController', '~> 2.0.1'
+	pod 'SwiftKeychainWrapper'
+end

@@ -13,22 +13,41 @@ enum Newsfeed {
   enum Model {
     struct Request {
       enum RequestType {
-        case some
-        case getFeed
+        case getNewsfeed
+        case revealPostIds(postId: Int)
       }
     }
     struct Response {
       enum ResponseType {
-        case some
-        case presentNewsFeed
+        case presentNewsFeed(feed: FeedResponse, revealdedPostIds: [Int])
       }
     }
     struct ViewModel {
       enum ViewModelData {
-        case some
-        case displayNewsfeed
+        case displayNewsfeed(feedViewModel: FeedViewModel)
       }
     }
   }
-  
+}
+
+struct FeedViewModel{
+    struct Cell:FeedCellViewModel {
+        var postId:Int
+        var iconUrlString: String
+        var name: String
+        var date: String
+        var text: String?
+        var likes: String?
+        var comments: String?
+        var shared: String?
+        var views: String?
+        var photoAttachment: FeedCellPhotoAttachmentViewModel?
+        var sizes: FeedCellSizes
+    }
+    struct FeedCellPhotoAttachment: FeedCellPhotoAttachmentViewModel{
+        var photoUrlString: String?
+        var height: Int
+        var width: Int
+    }
+    let cells:[Cell]
 }

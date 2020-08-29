@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  Festle
+
+  Created by Евгений Уланов on 16.07.2020.
+  Copyright © 2020 Евгений Уланов. All rights reserved.
+*/
+"Login" = "Login";
+"Password" = "Password";
+"Sign in" = "Sign in";
+"Registration" = "Registration";
+"Other option" = "Other option";
+"Online now" = "Online now";
+"Find text" = "find a city, recreation, museum or guide";
+"Upcoming tours" = "Upcoming tours";
+"More" = "More";
+"Top guides" = "Top guides";
+"guided tours" = "guided tours";
+"City" = "City:";
+"Languages" = "Languages:";
+"Contacts" = "Contacts:";
+"Viewed routes" = "Viewed routes";
+"Become guide" = "Become guide";
+"Create excursion" = "Create excursion";
+"Guides" = "Guides";
+"Excursions" = "Excursions";
+//Registration View
+"Privacy button" = "Privacy";
+"ViaLabel" = "or Sign Up via";
+"Privacy Info" = "We don't spam we'll take care of your";
+"SignUpButton" = "Sign Up";
+"Telnumb" = "Telephone number";
+"Email" = "Email";
+"City" = "City";
+"Name" = "Name";
+
+//EditInfo View
+"EditLabel" = "Edit Personal Information";
+"Save" = "Save";
+"Sex" = "Sex";
+"Birthday" = "Birthday";
+"LanguagesProficiency" = "Language proficiency";
+"About me" = "About me";
+"FirstName" = "First name";
+"SecondName" = "Second name";
+
+"Likes" = "Likes";
+"Excursions" = "Excursions";
+"About guide" = "About guid:";
+"Guided tours" = "Guided tours";
+"Reported" = "Reported";
+"upcoming tour" = "Upcoming tours:";
