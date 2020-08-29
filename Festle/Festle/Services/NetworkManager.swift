@@ -147,7 +147,7 @@ enum LoginProvider: URLRequestBuilder{
 enum TourProvider: URLRequestBuilder{
     
     case createTour(model: CreateTour)
-    case findTours(model: FindTourAPI)
+    case findTours(model: FindAPI)
     case updateTour(model: UpdateTour)
     case addPointToTour(model: AddPointToTour)
     case userTours(model: UserTours)
@@ -246,4 +246,97 @@ enum TourProvider: URLRequestBuilder{
     }
 }
 
-
+enum UserProvider: URLRequestBuilder{
+    
+    case changePassword(model: PasswordRestore)
+    case changeUser(model: ChangeUser)
+    case changePhoto(model: ChangePhoto)
+    case getUser
+    case getUserByEmail(email: String)
+    case addRating(model: AddRating)
+    case addLike(email: String)
+    case findUsers(model: FindAPI)
+    case topRatedGuids(model: GetTopGuids)
+    
+    var path: String{
+        switch self {
+        case .changePassword:
+            return API.User.changepassword
+        case .changeUser:
+            return API.User.changeuser
+        case .changePhoto:
+            return API.User.changephoto
+        case .getUser:
+            return API.User.getuser
+        case .getUserByEmail:
+            return API.User.getuserbyemail
+        case .addRating:
+            return API.User.addrating
+        case .addLike:
+            return API.User.addlike
+        case .findUsers:
+            return API.User.findusers
+        case .topRatedGuids:
+            return API.User.topratedguides
+        }
+    }
+    
+    var headers: HTTPHeaders?{
+        switch self{
+        case .getUserByEmail, .findUsers, .topRatedGuids:
+            return nil
+        default:
+            return ["Authorization": TokenService.shared.getAccessToken()!]
+        }
+    }
+    
+    var parameters: Parameters?  {
+        switch self{
+        case .getUserByEmail(let email):
+            return ["email": email]
+        case .findUsers(let model):
+            return ["search": model.search,
+                    "page" : model.page,
+                    "count" : model.count]
+        case .topRatedGuids(let model):
+            return ["page" : model.page,
+                    "count" : model.count]
+        default:
+            return nil
+        }
+    }
+    
+    var method: HTTPMethod {
+        switch self {
+        case .changePhoto, .addLike:
+            return .post
+        case .getUser, .getUserByEmail, .findUsers, .topRatedGuids:
+            return .get
+        case .changePassword, .changeUser, .addRating:
+            return .put
+        }
+    }
+    
+    var body: Data?{
+        switch self {
+        case .changePassword(model: let model):
+            return encodeToJSON(model: model)
+        case .changeUser(model: let model):
+            return encodeToJSON(model: model)
+        case .changePhoto(model: let model):
+            return encodeToJSON(model: model)
+        case .getUserByEmail(email: let email):
+            return encodeToJSON(model: email)
+        case .addRating(model: let model):
+            return encodeToJSON(model: model)
+        case .addLike(email: let email):
+            return encodeToJSON(model: email)
+        case .findUsers(model: let model):
+            return encodeToJSON(model: model)
+        case .topRatedGuids(model: let model):
+            return encodeToJSON(model: model)
+        default:
+            return nil
+        }
+    }
+}

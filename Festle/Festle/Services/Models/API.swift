@@ -38,7 +38,9 @@ struct API {
         static let changeuser = "/User/changeuser"
         static let changephoto = "/User/changephoto"
         static let getuser = "/User/getuser"
+        static let getuserbyemail = "/User/getuserbyemail"
         static let addrating = "/User/addrating"
+        static let addlike = "/User/addlike"
         static let findusers = "/User/findusers"
         static let topratedguides = "/User/topratedguides"
     }

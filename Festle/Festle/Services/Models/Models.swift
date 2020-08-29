@@ -146,6 +146,10 @@ struct UserAPIModelPagination: Codable{
     let data: [UserAPIModel]?
 }
 
+struct ChangePhoto: Codable{
+    var image: CodableImage
+}
+
 struct GuideInformationAPI: Codable{
     let name: String?
     let photo: PhotoAPIModel
@@ -158,8 +162,12 @@ struct GuideInformationAPIPagination: Codable {
     let data: [GuideInformationAPI]?
 }
 
-struct FindTourAPI: Codable{
+struct FindAPI: Codable{
     let search: String
+    var page, count: Int32
+}
+
+struct GetTopGuids: Codable{
     var page, count: Int32
 }
 
