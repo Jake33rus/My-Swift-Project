@@ -50,6 +50,12 @@ extension URLRequestBuilder{
         }
         return request
     }
+    
+    func encodeToJSON<T:Codable>(model:T)->Data{
+        let encoder = JSONEncoder()
+        let jsonData = try! encoder.encode(model)
+        return jsonData
+    }
 }
 
 
@@ -129,16 +135,115 @@ enum LoginProvider: URLRequestBuilder{
     var body: Data?{
         switch self {
         case .login(loginModel: let loginModel):
-            let encoder = JSONEncoder()
-            let jsonData = try! encoder.encode(loginModel)
-            return jsonData
+            return encodeToJSON(model: loginModel)
         case .register(regModel: let regModel):
-            let encoder = JSONEncoder()
-            let jsonData = try! encoder.encode(regModel)
-            return jsonData
+            return encodeToJSON(model: regModel)
+        default:
+            return nil
+        }
+    }
+}
+
+enum TourProvider: URLRequestBuilder{
+    
+    case createTour(model: CreateTour)
+    case findTours(model: FindTourAPI)
+    case updateTour(model: UpdateTour)
+    case addPointToTour(model: AddPointToTour)
+    case userTours(model: UserTours)
+    case addLike(id:Int32)
+    case addTourPhoto(model: AddTourPhoto)
+    case addTourPointPhoto(model: AddTourPhoto)
+    case removeTourPhoto(photoId: String)
+    case streaming(model:StreamingModel)
+    
+    var path: String{
+        switch self {
+        case .createTour:
+            return API.Tour.createtour
+        case .findTours:
+            return API.Tour.findtours
+        case .updateTour:
+           return API.Tour.updatetour
+        case .addPointToTour:
+           return API.Tour.addpointtotour
+        case .userTours:
+            return API.Tour.userstours
+        case .addLike:
+            return API.Tour.addlike
+        case .addTourPhoto:
+            return API.Tour.addtourphoto
+        case .addTourPointPhoto:
+            return API.Tour.addtourpointphoto
+        case .removeTourPhoto:
+            return API.Tour.removetourphoto
+        case .streaming:
+            return API.Tour.streaming
+        }
+    }
+    
+    var headers: HTTPHeaders?{
+        switch self{
+        case .createTour, .updateTour, .addPointToTour,
+             .userTours, .addLike, .addTourPhoto, .addTourPointPhoto, .removeTourPhoto:
+            return ["Authorization": TokenService.shared.getAccessToken()!]
         default:
             return nil
         }
     }
     
+    var parameters: Parameters?  {
+        switch self{
+        case .findTours(let model):
+            return ["search": model.search,
+                    "page" : model.page,
+                    "count" : model.count]
+        case .userTours(let model):
+            return ["page" : model.page,
+                    "count" : model.count]
+        case .streaming(let model):
+            return ["page" : model.page,
+                    "count" : model.count]
+        default:
+            return nil
+        }
+    }
+    
+    var method: HTTPMethod {
+        switch self {
+        case .createTour, .addPointToTour, .addLike, .addTourPhoto, .removeTourPhoto, .addTourPointPhoto:
+            return .post
+        case .findTours, .userTours, .streaming:
+            return .get
+        case .updateTour:
+            return .put
+        }
+    }
+    
+    var body: Data?{
+        switch self {
+        case .createTour(model: let model):
+            return encodeToJSON(model: model)
+        case .findTours(model: let model):
+            return encodeToJSON(model: model)
+        case .updateTour(model: let model):
+            return encodeToJSON(model: model)
+        case .addPointToTour(model: let model):
+            return encodeToJSON(model: model)
+        case .userTours(model: let model):
+            return encodeToJSON(model: model)
+        case .addLike(id: let id):
+            return encodeToJSON(model: id)
+        case .addTourPhoto(model: let model):
+            return encodeToJSON(model: model)
+        case .addTourPointPhoto(model: let model):
+            return encodeToJSON(model: model)
+        case .removeTourPhoto(photoId: let photoId):
+            return encodeToJSON(model: photoId)
+        case .streaming(model: let model):
+            return encodeToJSON(model: model)
+        }
+    }
 }
+
+

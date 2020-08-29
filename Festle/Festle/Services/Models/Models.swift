@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 struct LoginModel: Codable{
     let login, password, platform: String
 }
 
-struct LoginResult {
+struct LoginResult: Codable{
     let accessToken, refreshToken: String
 }
 
-struct LoginModelByExternalApi{
+struct LoginModelByExternalApi: Codable{
     let key, name, platform: String
 }
 
@@ -24,18 +25,18 @@ struct RegisterModel: Codable{
     let email, nickname, password, platform: String
 }
 
-struct RegisterModelByExternalAPI{
+struct RegisterModelByExternalAPI: Codable{
     let email, nickname, platform, externalId, externalName: String
 }
 
-struct CreateTourPoint{
+struct CreateTourPoint: Codable{
     let name, descriptio: String
     let location, address : String?
     let isAutoGenerate: Bool
     let pointNumber: Int32
 }
 
-struct CreateTour{
+struct CreateTour: Codable{
     let name, dateTime, description: String
     let isDraft: Bool
     let price: Double
@@ -43,15 +44,15 @@ struct CreateTour{
     let createTourPoints: [CreateTourPoint]
 }
 
-struct RoleAPIModel{
+struct RoleAPIModel: Codable{
     let name: String
 }
 
-struct PhotoAPIModel{
+struct PhotoAPIModel: Codable{
     let fileName, id: String?
 }
 
-struct UserAPIModel{
+struct UserAPIModel: Codable{
     let email, nickname, city, phone, about: String?
     let isGuide: Bool
     let rating: Float
@@ -59,14 +60,14 @@ struct UserAPIModel{
     let photo: PhotoAPIModel
 }
 
-struct TourPointAPIModel {
+struct TourPointAPIModel: Codable {
     let id: Int32
     let name, description, coords: String?
     let pointNumber: Int32
     let photos: [PhotoAPIModel]?
 }
 
-struct TourAPIModel{
+struct TourAPIModel: Codable{
     let id, likeCount: Int32
     let description, name: String?
     let dateTime: String
@@ -79,19 +80,19 @@ struct TourAPIModel{
     let length: Float
 }
 
-struct TourAPIModelPagination{
-    let page, count: Int32
+struct TourAPIModelPagination: Codable{
+    var page, count: Int32
     let data: TourAPIModel?
 }
 
-struct UpdateTourPoint{
+struct UpdateTourPoint: Codable{
     let id, pointNumber: Int32
     let name, description: String
     let isAutoGenerate: Bool
     let location, address: String?
 }
 
-struct UpdateTour{
+struct UpdateTour: Codable{
     let id: Int32
     let name, dateTime, description: String
     let isDraft, isGenerateTourPoint: Bool
@@ -100,52 +101,81 @@ struct UpdateTour{
     let updateTourPoints: [UpdateTourPoint]?
 }
 
-struct AddPointToTour{
+struct AddPointToTour: Codable{
     let name, description: String
     let isAutoGenerate: Bool
     let location, address: String?
     let tourId, pointNumber: Int32
 }
 
-struct EndTourEdit{
+struct AddTourPhoto: Codable{
+    let id: Int32
+    let descr: String
+    let name: String
+    let formFile: CodableImage
+}
+
+struct EndTourEdit: Codable{
     let id: Int32
 }
 
-struct RemoveTourPhoto{
+struct RemoveTourPhoto: Codable{
     let photoId: String?
 }
 
-struct PasswordRestore{
+struct PasswordRestore: Codable{
     let password, prevPassword: String
 }
 
-struct ChangeUser{
+struct ChangeUser: Codable{
     let nickname, email: String
     let isGuide: Bool
 }
 
-struct AddRating{
+struct AddRating: Codable{
     let rate: Int32
     let user: String
 }
 
-struct AddUserLike{
+struct AddUserLike: Codable{
     let email: String?
 }
 
-struct UserAPIModelPagination{
-    let page, count: Int32
+struct UserAPIModelPagination: Codable{
+    var page, count: Int32
     let data: [UserAPIModel]?
 }
 
-struct GuideInformationAPI{
+struct GuideInformationAPI: Codable{
     let name: String?
     let photo: PhotoAPIModel
     let tourCount, likes: Int32
     let city: String?
 }
 
-struct GuideInformationAPIPagination {
-    let page, count: Int32
+struct GuideInformationAPIPagination: Codable {
+    var page, count: Int32
     let data: [GuideInformationAPI]?
+}
+
+struct FindTourAPI: Codable{
+    let search: String
+    var page, count: Int32
+}
+
+struct UserTours: Codable{
+    var page, count: Int32
+}
+
+struct StreamingModel: Codable{
+    var page, count: Int32
+}
+
+public struct CodableImage: Codable {
+    public let photo: Data
+    public init(photo: UIImage) {
+        self.photo = photo.pngData()!
+    }
+//    Deserialize example:
+//    UIImage(data: instanceOfSomeImage.photo)!
 }
