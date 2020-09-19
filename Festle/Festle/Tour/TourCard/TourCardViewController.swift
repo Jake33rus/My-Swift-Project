@@ -17,7 +17,14 @@ class TourCardViewController: UIViewController, TourCardDisplayLogic {
   var interactor: TourCardBusinessLogic?
   var router: (NSObjectProtocol & TourCardRoutingLogic)?
     
-    @IBOutlet weak var tourImage: UIImageView!
+    @IBOutlet weak var tourImage: UIImageView!{
+        didSet{
+            tourImage.layer.cornerRadius = 10
+            tourImage.layer.borderWidth = 1
+            tourImage.layer.borderColor = #colorLiteral(red: 0, green: 0.693600595, blue: 0.9541637301, alpha: 1)
+            tourImage.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var tourName: UILabel!
     @IBOutlet weak var objectsAndHoursLabel: UILabel!
     @IBOutlet weak var tourDescr: UILabel!

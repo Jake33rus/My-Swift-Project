@@ -43,6 +43,20 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright (c) 2020 jankaltoun &lt;jan.kaltoun@me.com&gt;
+
+Please do whatever you want with this code.
+
+If you link to this repository or mention me as the author, it will make me happy!</string>
+			<key>License</key>
+			<string>MIT</string>
+			<key>Title</key>
+			<string>AlamofireEasyLogger</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>
                                  Apache License
                            Version 2.0, January 2004
@@ -811,6 +825,26 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			<string>Apache</string>
 			<key>Title</key>
 			<string>GTMSessionFetcher</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright 2020 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>GoogleMaps</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright 2020 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>GooglePlaces</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

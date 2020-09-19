@@ -50,7 +50,12 @@ class DashboardViewController: UIViewController, DashboardDisplayLogic {
     
   var interactor: DashboardBusinessLogic?
   var router: (NSObjectProtocol & DashboardRoutingLogic)?
-  private var tourDataSource: InfiniteCollectionViewDataSource<CarouselCell, CarouselTourModel>?
+
+    private var tourDataSource: InfiniteCollectionViewDataSource<CarouselCell, OnlineToursViewModel.DisplayOnlineTour>?
+    
+    private var topGuidViewModel = DashbordGuidViewModel.init(topGuids: [])
+    private var onlineNowTourViewModel = OnlineToursViewModel.init(onlineNow: [])
+    private var freshToursViewModel = DashboardTourViewModel.init(comingTours: [], fullTours: nil)
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -93,13 +98,42 @@ class DashboardViewController: UIViewController, DashboardDisplayLogic {
   override func viewDidLoad() {
     super.viewDidLoad()
     configurateCarousel()
+    self.guidesTableView.showActivityIndicator()
+    interactor?.makeRequest(request: .getTopGuids)
+    interactor?.makeRequest(request: .getOnlineTours)
+    interactor?.makeRequest(request: .getComingTours)
   }
   
   func displayData(viewModel: Dashboard.Model.ViewModel.ViewModelData) {
-
+    switch (viewModel) {
+    case .displayOnlineTours(onlineTours: let onlineTours):
+        self.onlineNowTourViewModel = onlineTours
+        carouselTours.hideNullIndicator()
+        configurateCarousel()
+        carouselTours.reloadData()
+    case .displayTopGuids(topGuids: let topGuids):
+        self.topGuidViewModel = topGuids
+        guidesTableView.hideActivityIndicator()
+        guidesTableView.reloadData()
+    case .displatComingTours(comingTours: let comingTours):
+        self.freshToursViewModel = comingTours
+        toursTableView.hideActivityIndicator()
+        toursTableView.reloadData()
+    case .displateNotOnlineTours:
+        displayNotNowEventLable()
+    }
   }
 
+    func displayNotNowEventLable(){
+        let newFrame = CGRect(x:0, y:0, width:carouselTours.frame.width, height:0)
+        carouselTours.frame = newFrame
+//        carouselTours.isHidden = true
+//        onlineLabel.isHidden = true
+        //carouselTours.showNullIndicator()
+    }
+    
     func configurateCarousel(){
+        if (onlineNowTourViewModel.onlineNow.count != 0){
         carouselTours.showsVerticalScrollIndicator = false
         carouselTours.showsHorizontalScrollIndicator = false
         carouselTours.backgroundColor = .clear
@@ -108,10 +142,10 @@ class DashboardViewController: UIViewController, DashboardDisplayLogic {
         carouselTours.register(CarouselCell.self)
 
         tourDataSource = InfiniteCollectionViewDataSource(
-            data: testData,
+            data: onlineNowTourViewModel.onlineNow,
             cellClass: CarouselCell.self
-        ) { testData, cell in
-            cell.configure(title: testData.tourName, image: testData.mainImage)
+        ) { data, cell in
+            cell.configure(title: data.name, image: UIImage(named: "nature1")!)
         }
         carouselTours.dataSource = tourDataSource
         DispatchQueue.main.async {
@@ -120,6 +154,10 @@ class DashboardViewController: UIViewController, DashboardDisplayLogic {
                 at: .centeredHorizontally,
                 animated: false
             )
+            }
+        }
+        else {
+            carouselTours.showNullIndicator()
         }
     }
     @IBAction func moreGuidesButPress(_ sender: Any) {
@@ -149,22 +187,22 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate{
         if tableView == self.guidesTableView {
             self.guidesTableView.register(UINib(nibName: "FGuidCell", bundle: nil), forCellReuseIdentifier: "cellGuideId")
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellGuideId", for: indexPath) as! FavoriteGuideCell
-            let guide = favoriteGuids[indexPath.row]
-            cell.photo.image = guide.photo
+            let guide = topGuidViewModel.topGuids[indexPath.row]
+            cell.photo = WebImageView(image: UIImage.init(named: "nature1"))
             cell.cityLabel.text = guide.city
-            cell.likesCount.text = String(guide.likes)
-            cell.nameLabel.text = guide.nameLabel
-            cell.tourCount.text = String(guide.coutTour)
+            cell.likesCount.text = guide.likes
+            cell.nameLabel.text = guide.name
+            cell.tourCount.text = guide.tours
             return cell
             
         } else {
             self.toursTableView.register(UINib(nibName: "FestCell", bundle: nil), forCellReuseIdentifier: "FestCellId")
             let cell = tableView.dequeueReusableCell(withIdentifier: "FestCellId", for: indexPath) as! FavoriteFestCell
-            let fest = favoriteFests[indexPath.row]
-            cell.isPaid = fest.isPaid
-            cell.photo.image = fest.image
-            cell.tourDescriptionLabel.text = fest.descriptionLabel
-            cell.tourNameLabel.text = fest.nameLabel
+            let fest = freshToursViewModel.comingTours[indexPath.row]
+            cell.isPaid = fest.isPaidStatus
+            cell.photo = WebImageView(image: UIImage.init(named: "nature1"))
+            cell.tourDescriptionLabel.text = fest.descr
+            cell.tourNameLabel.text = fest.name
             return cell
         }
     }
@@ -181,6 +219,21 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate{
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if tableView == self.guidesTableView{
+            return topGuidViewModel.topGuids.count
+        }
+        else if tableView == self.toursTableView{
+            return freshToursViewModel.comingTours.count
+        }
+        else {
+            return 3
+        }
+    }
+}
+
+extension DashboardViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedTrail = testData[indexPath.row%testData.count]
+        print("Corousel click \(selectedTrail.tourName) cell")
     }
 }

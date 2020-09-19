@@ -42,6 +42,14 @@ class TokenService{
     func removeRefreshToken() -> Bool{
         return KeychainWrapper.standard.removeObject(forKey: refreshKey)
     }
+    
+    func updateTokens(model: AuthResponse)->Bool{
+        if(removeAccessToken() && removeRefreshToken())
+        {
+            return addTokens(tokens: model)
+        }
+        return false
+    }
 }
 
 extension TokenService: NSCopying {

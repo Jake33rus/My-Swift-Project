@@ -1,0 +1,6 @@
+framework module Pods_KaycomTestTask {
+  umbrella header "Pods-KaycomTestTask-umbrella.h"
+
+  export *
+  module * { export * }
+}

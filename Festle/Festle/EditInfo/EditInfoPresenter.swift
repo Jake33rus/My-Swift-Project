@@ -16,7 +16,11 @@ class EditInfoPresenter: EditInfoPresentationLogic {
   weak var viewController: EditInfoDisplayLogic?
   
   func presentData(response: EditInfo.Model.Response.ResponseType) {
-  
+    switch response {
+    case .presentInfoForUpdate(info: let info):
+        self.viewController?.displayData(viewModel: .displaySuccessUpdate(info: info))
+
+    }
   }
   
 }

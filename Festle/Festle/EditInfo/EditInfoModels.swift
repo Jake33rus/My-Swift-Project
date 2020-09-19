@@ -13,19 +13,31 @@ enum EditInfo {
   enum Model {
     struct Request {
       enum RequestType {
-        case some
+        case updatePhoto(nick:String, photo: UIImage)
+        case saveNewInfo(model: ChangeUserRequest)
       }
     }
     struct Response {
       enum ResponseType {
-        case some
+        case presentInfoForUpdate(info: String)
       }
     }
     struct ViewModel {
       enum ViewModelData {
-        case some
+        case displaySuccessUpdate(info: String)
       }
     }
   }
-  
+}
+
+struct EditInfoModel{
+    var image: String?
+    var firstName: String?
+    var secondName: String?
+    var city: String?
+    var email: String?
+    var tel: String?
+    var languages: String?
+    var birthDayDate: String?
+    var aboutUser: String?
 }

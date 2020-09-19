@@ -9,14 +9,14 @@
 import UIKit
 
 protocol ProfileDisplayLogic: class {
-  func displayData(viewModel: UserProfile.Model.ViewModel.ViewModelData)
+    func displayData(viewModel: UserProfile.Model.ViewModel.ViewModelData)
 }
 
 class ProfileViewController: UIViewController, ProfileDisplayLogic {
 
     @IBOutlet weak var editInfoButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
-    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var profilePhoto: WebImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userCity: UILabel!
     @IBOutlet weak var userLanguages: UILabel!
@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController, ProfileDisplayLogic {
     var router: (NSObjectProtocol & ProfileRoutingLogic)?
     let selfToEditInfoSegueName = "showEditUserInformation"
     let selfToSettinfSegueName = "showSettings"
+    var userInfoVM: DatumUser?
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -43,6 +44,9 @@ class ProfileViewController: UIViewController, ProfileDisplayLogic {
     setup()
   }
   
+    override func viewWillAppear(_ animated: Bool) {
+        interactor?.makeRequest(request: .getUser)
+    }
   // MARK: Setup
   
   private func setup() {
@@ -77,16 +81,10 @@ class ProfileViewController: UIViewController, ProfileDisplayLogic {
     profilePhoto.contentMode = .scaleAspectFill
     isGuideImage.isHidden = true
    
-    
-    //test data
     userCity.text = NSLocalizedString("City", comment: "")
     userLanguages.text = NSLocalizedString("Languages", comment: "")
     userContacts.text = NSLocalizedString("Contacts", comment: "")
-    userName.text = "Евгений Уланов"
-    cityInfo.text = "Владимир, Россия"
-    langInfo.text = "Русский, Английский"
-    contactInfo.text = "+79040303551\njeny@ulanoff.ru"
-    
+    //test data
     }
     
     private func updateUIForGuide(){
@@ -99,12 +97,25 @@ class ProfileViewController: UIViewController, ProfileDisplayLogic {
     
     override func viewDidLayoutSubviews() {
         profilePhoto.layer.cornerRadius = profilePhoto.frame.height / 2
-        //updateUIForGuide()
     }
     
+  //MARK: DisplayData
+    func displayUserInfo(from userInfo: DatumUser){
+        userInfoVM = userInfo
+        userName.text = userInfoVM!.nickname
+        cityInfo.text = userInfoVM!.city
+        langInfo.text = userInfoVM!.about
+        contactInfo.text = userInfoVM!.email
+        if (userInfoVM?.photo?.fileName != nil){
+            let url = API.photoURL + userInfoVM!.photo!.fileName
+            profilePhoto.set(imageURL: url)
+        }
+    }
   // MARK: Routing
   
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.router?.prepare(for: segue, sender: sender)
+    }
   
   // MARK: View lifecycle
   
@@ -118,7 +129,10 @@ class ProfileViewController: UIViewController, ProfileDisplayLogic {
     }
     
   func displayData(viewModel: UserProfile.Model.ViewModel.ViewModelData) {
-
+    switch viewModel {
+    case .displayUserInfo(userInfo: let userInfo):
+        self.displayUserInfo(from: userInfo)
+    }
   }
     @IBAction func becomeGuideButton(_ sender: Any) {
         updateUIForGuide()

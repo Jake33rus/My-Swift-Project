@@ -16,4 +16,7 @@ target 'Festle' do
 	pod 'Alamofire'
 	pod 'BATabBarController', '~> 2.0.1'
 	pod 'SwiftKeychainWrapper'
+	pod 'GoogleMaps'
+	pod 'GooglePlaces'
+pod 'AlamofireEasyLogger'
 end

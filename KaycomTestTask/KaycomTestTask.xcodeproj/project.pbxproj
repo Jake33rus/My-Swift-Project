@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C4D15D42510DD250039B428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4D15D32510DD250039B428 /* AppDelegate.swift */; };
+		5C4D15D62510DD250039B428 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4D15D52510DD250039B428 /* SceneDelegate.swift */; };
+		5C4D15D82510DD250039B428 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4D15D72510DD250039B428 /* ViewController.swift */; };
+		5C4D15DB2510DD250039B428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4D15D92510DD250039B428 /* Main.storyboard */; };
+		5C4D15DD2510DD260039B428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4D15DC2510DD260039B428 /* Assets.xcassets */; };
+		5C4D15E02510DD260039B428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4D15DE2510DD260039B428 /* LaunchScreen.storyboard */; };
+		5C6C98522510E0CD00DBC8DA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C98512510E0CD00DBC8DA /* Response.swift */; };
+		5F86F93128496780AE2818C5 /* Pods_KaycomTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76492E2E71A7E28BE6DCFE37 /* Pods_KaycomTestTask.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		23D5A02FD3A09FE8E2B9159F /* Pods-KaycomTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaycomTestTask.release.xcconfig"; path = "Target Support Files/Pods-KaycomTestTask/Pods-KaycomTestTask.release.xcconfig"; sourceTree = "<group>"; };
+		5C4D15D02510DD250039B428 /* KaycomTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaycomTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C4D15D32510DD250039B428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C4D15D52510DD250039B428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5C4D15D72510DD250039B428 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C4D15DA2510DD250039B428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C4D15DC2510DD260039B428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C4D15DF2510DD260039B428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C4D15E12510DD260039B428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C6C98512510E0CD00DBC8DA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		76492E2E71A7E28BE6DCFE37 /* Pods_KaycomTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaycomTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA6FF2DA733AD0BBFDB8A229 /* Pods-KaycomTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaycomTestTask.debug.xcconfig"; path = "Target Support Files/Pods-KaycomTestTask/Pods-KaycomTestTask.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C4D15CD2510DD250039B428 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F86F93128496780AE2818C5 /* Pods_KaycomTestTask.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B78DEA590F595CE0AB38969 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA6FF2DA733AD0BBFDB8A229 /* Pods-KaycomTestTask.debug.xcconfig */,
+				23D5A02FD3A09FE8E2B9159F /* Pods-KaycomTestTask.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5C4D15C72510DD250039B428 = {
+			isa = PBXGroup;
+			children = (
+				5C4D15D22510DD250039B428 /* KaycomTestTask */,
+				5C4D15D12510DD250039B428 /* Products */,
+				1B78DEA590F595CE0AB38969 /* Pods */,
+				6EC289E58B98D16964A91C83 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5C4D15D12510DD250039B428 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C4D15D02510DD250039B428 /* KaycomTestTask.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C4D15D22510DD250039B428 /* KaycomTestTask */ = {
+			isa = PBXGroup;
+			children = (
+				5C4D15D32510DD250039B428 /* AppDelegate.swift */,
+				5C4D15D52510DD250039B428 /* SceneDelegate.swift */,
+				5C4D15D72510DD250039B428 /* ViewController.swift */,
+				5C4D15D92510DD250039B428 /* Main.storyboard */,
+				5C4D15DC2510DD260039B428 /* Assets.xcassets */,
+				5C4D15DE2510DD260039B428 /* LaunchScreen.storyboard */,
+				5C4D15E12510DD260039B428 /* Info.plist */,
+				5C6C98512510E0CD00DBC8DA /* Response.swift */,
+			);
+			path = KaycomTestTask;
+			sourceTree = "<group>";
+		};
+		6EC289E58B98D16964A91C83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76492E2E71A7E28BE6DCFE37 /* Pods_KaycomTestTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C4D15CF2510DD250039B428 /* KaycomTestTask */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C4D15E42510DD260039B428 /* Build configuration list for PBXNativeTarget "KaycomTestTask" */;
+			buildPhases = (
+				5B6439F66D5BF42AA3FFF9F3 /* [CP] Check Pods Manifest.lock */,
+				5C4D15CC2510DD250039B428 /* Sources */,
+				5C4D15CD2510DD250039B428 /* Frameworks */,
+				5C4D15CE2510DD250039B428 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KaycomTestTask;
+			productName = KaycomTestTask;
+			productReference = 5C4D15D02510DD250039B428 /* KaycomTestTask.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C4D15C82510DD250039B428 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Евгений Уланов";
+				TargetAttributes = {
+					5C4D15CF2510DD250039B428 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+				};
+			};
+			buildConfigurationList = 5C4D15CB2510DD250039B428 /* Build configuration list for PBXProject "KaycomTestTask" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C4D15C72510DD250039B428;
+			productRefGroup = 5C4D15D12510DD250039B428 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C4D15CF2510DD250039B428 /* KaycomTestTask */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C4D15CE2510DD250039B428 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4D15E02510DD260039B428 /* LaunchScreen.storyboard in Resources */,
+				5C4D15DD2510DD260039B428 /* Assets.xcassets in Resources */,
+				5C4D15DB2510DD250039B428 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B6439F66D5BF42AA3FFF9F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KaycomTestTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C4D15CC2510DD250039B428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4D15D82510DD250039B428 /* ViewController.swift in Sources */,
+				5C4D15D42510DD250039B428 /* AppDelegate.swift in Sources */,
+				5C4D15D62510DD250039B428 /* SceneDelegate.swift in Sources */,
+				5C6C98522510E0CD00DBC8DA /* Response.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C4D15D92510DD250039B428 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C4D15DA2510DD250039B428 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C4D15DE2510DD260039B428 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C4D15DF2510DD260039B428 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C4D15E22510DD260039B428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C4D15E32510DD260039B428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C4D15E52510DD260039B428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6FF2DA733AD0BBFDB8A229 /* Pods-KaycomTestTask.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQ7PYD7RDS;
+				INFOPLIST_FILE = KaycomTestTask/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ulanov.KaycomTestTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C4D15E62510DD260039B428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23D5A02FD3A09FE8E2B9159F /* Pods-KaycomTestTask.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQ7PYD7RDS;
+				INFOPLIST_FILE = KaycomTestTask/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ulanov.KaycomTestTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C4D15CB2510DD250039B428 /* Build configuration list for PBXProject "KaycomTestTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C4D15E22510DD260039B428 /* Debug */,
+				5C4D15E32510DD260039B428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C4D15E42510DD260039B428 /* Build configuration list for PBXNativeTarget "KaycomTestTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C4D15E52510DD260039B428 /* Debug */,
+				5C4D15E62510DD260039B428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C4D15C82510DD250039B428 /* Project object */;
+}

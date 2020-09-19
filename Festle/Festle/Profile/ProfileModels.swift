@@ -13,19 +13,36 @@ enum UserProfile {
   enum Model {
     struct Request {
       enum RequestType {
-        case some
+        case getUser
       }
     }
     struct Response {
       enum ResponseType {
-        case some
+        case presentUserInfo(userInfo: DatumUser)
       }
     }
     struct ViewModel {
       enum ViewModelData {
-        case some
+        case displayUserInfo(userInfo: DatumUser)
       }
     }
   }
   
+}
+
+struct UserInfoViewModel{
+    let isGuide: Bool
+    let name: String
+    let photo: UIImage?
+    let photoURL: String?
+    let phone: String?
+    let lang: String?
+    let email: String
+    let about: String?
+    let city: String?
+    var contact: String {
+        get{
+            return "\(phone)\n\(email)"
+        }
+    }
 }

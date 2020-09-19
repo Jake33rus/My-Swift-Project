@@ -24,7 +24,11 @@ class ProfileRouter: NSObject, ProfileRoutingLogic {
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if(segue.identifier == viewController?.selfToEditInfoSegueName){
+            let destination = segue.destination as? EditInfoViewController
+            let userInfo = viewController?.userInfoVM
+            destination?.userInfo = userInfo
+        }
     }
     
 

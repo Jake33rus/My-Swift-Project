@@ -22,7 +22,7 @@ extension URLRequestBuilder{
     var baseURL: String {
         return API.baseURL
     }
-    
+
     func asURLRequest() throws -> URLRequest {
         let url = try baseURL.asURL()
         
@@ -30,6 +30,8 @@ extension URLRequestBuilder{
         request.httpMethod = method.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.timeoutInterval = 10
+        
         
         if (body != nil){
             request.httpBody = body
@@ -60,17 +62,69 @@ extension URLRequestBuilder{
 
 
 class NetworkManager<T: URLRequestBuilder>{
-    func request<U: Codable>(service: T, decodeType: U.Type, completion: @escaping(Result<U>)->Void) {
-        guard let urlRequest = service.urlRequest else { return }
-        AF.request(urlRequest).responseDecodable(of: U.self) { (response) in
-            switch response.result{
-            case .success(let result):
-                completion(.success(result))
-            case .failure(let error):
-                completion(.failure(error))
+    func UpdateToken(){
+        let accessToken = TokenService.shared.getAccessToken()
+        let refreshToken = TokenService.shared.getRefreshToken()
+        if (refreshToken != nil && accessToken != nil){
+            let url = URL(string: API.baseURL)!
+            var request = URLRequest(url: url.appendingPathComponent(API.Auth.refreshtoken))
+            request.method = HTTPMethod.put
+            request.headers = HTTPHeaders(["authorization": "Bearer " + accessToken!,
+                                           "RefreshToken": refreshToken!])
+            AF.request(request).responseDecodable(of: AuthResponse.self) { (response) in
+                print("Request:\(response.request)\nHeaders:\(response.request?.headers)\nBody:\(response.request?.httpBody)\nCODE:\(String(describing: response.response?.statusCode))")
+                switch (response.result){
+                case .success(let result):
+                    if(!TokenService.shared.updateTokens(model: result)){
+                        print("\nError\n")
+                    } else {
+                        print("Tokens update")
+                    }
+                case .failure(let error):
+                    print("\nError update tokens\n\(error.localizedDescription)")
+                }
+            }
+            print("REQUEST:\n\(request)")
+            }
+    }
+    
+    func request<U: Codable>(service: T, decodeType: U.Type?, completion: @escaping(Result<U>)->Void) {
+        self.UpdateToken()
+            guard let urlRequest = service.urlRequest else { return }
+            AF.request(urlRequest).responseDecodable(of: U.self) { (response) in
+                print("Request:\(response.request)\nHeaders:\(response.request?.headers)\nCODE:\(String(describing: response.response?.statusCode))\nBody\(response.request?.httpBody)")
+                switch response.result{
+                case .success(let result):
+                    completion(.success(result))
+                case .failure(let error):
+                    print("ERROR\n\n\(error.localizedDescription)\n\n\n \(error)")
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func requestPhoto(username: String, image: UIImage?, completion: @escaping(AFResult<Any>)->Void){
+        self.UpdateToken()
+            let headers: HTTPHeaders = ["authorization": "Bearer " + TokenService.shared.getAccessToken()!,
+                           "Content-type": "multipart/form-data"]
+            var url = URL(string: API.baseURL)!
+            url.appendPathComponent(API.User.changephoto)
+            AF.upload(multipartFormData: { (multipartFormData) in
+                multipartFormData.append(image!.jpegData(compressionQuality: 0.5)!,
+                                         withName: "FormFiles",
+                                         fileName: "\(username)Ava.jpg",
+                                         mimeType: "image/jpg")
+                }, to:url, method: .post, headers: headers).response { (response) in
+                    print("\nUPDATE PHOTO CODE:\(response.response?.statusCode)\nHEADERS\(response.request?.headers)\n")
+                    switch(response.result){
+                    case .success(let data):
+                        completion(.success(data))
+                    case .failure(let error):
+                        print("UPLOAD ERROR\n\n\(error.localizedDescription)\n\n")
+                        completion(.failure(error))
+                }
             }
         }
-    }
 }
 
 enum Result<T: Codable>{
@@ -107,9 +161,9 @@ enum LoginProvider: URLRequestBuilder{
     var headers: HTTPHeaders?{
         switch self{
         case .logout(let authorization):
-            return ["Authorization": authorization]
+            return ["Authorization": "Bearer" + authorization]
         case .refreshToken(let authorization, let refreshToken):
-            return ["Authorization": authorization,
+            return ["Authorization":"Bearer " + authorization,
                     "RefreshToken": refreshToken]
         default:
             return nil
@@ -155,7 +209,8 @@ enum TourProvider: URLRequestBuilder{
     case addTourPhoto(model: AddTourPhoto)
     case addTourPointPhoto(model: AddTourPhoto)
     case removeTourPhoto(photoId: String)
-    case streaming(model:StreamingModel)
+    case streaming(model: StreamingModel)
+    case freshtour(model: StreamingModel)
     
     var path: String{
         switch self {
@@ -179,6 +234,8 @@ enum TourProvider: URLRequestBuilder{
             return API.Tour.removetourphoto
         case .streaming:
             return API.Tour.streaming
+        case .freshtour:
+            return API.Tour.freshtour
         }
     }
     
@@ -204,6 +261,9 @@ enum TourProvider: URLRequestBuilder{
         case .streaming(let model):
             return ["page" : model.page,
                     "count" : model.count]
+        case .freshtour(let model):
+            return ["page" : model.page,
+                    "count" : model.count]
         default:
             return nil
         }
@@ -213,7 +273,7 @@ enum TourProvider: URLRequestBuilder{
         switch self {
         case .createTour, .addPointToTour, .addLike, .addTourPhoto, .removeTourPhoto, .addTourPointPhoto:
             return .post
-        case .findTours, .userTours, .streaming:
+        case .findTours, .userTours, .streaming, .freshtour:
             return .get
         case .updateTour:
             return .put
@@ -240,8 +300,8 @@ enum TourProvider: URLRequestBuilder{
             return encodeToJSON(model: model)
         case .removeTourPhoto(photoId: let photoId):
             return encodeToJSON(model: photoId)
-        case .streaming(model: let model):
-            return encodeToJSON(model: model)
+        default:
+            return nil
         }
     }
 }
@@ -249,7 +309,7 @@ enum TourProvider: URLRequestBuilder{
 enum UserProvider: URLRequestBuilder{
     
     case changePassword(model: PasswordRestore)
-    case changeUser(model: ChangeUser)
+    case changeUser(model: ChangeUserRequest)
     case changePhoto(model: ChangePhoto)
     case getUser
     case getUserByEmail(email: String)
@@ -286,7 +346,7 @@ enum UserProvider: URLRequestBuilder{
         case .getUserByEmail, .findUsers, .topRatedGuids:
             return nil
         default:
-            return ["Authorization": TokenService.shared.getAccessToken()!]
+            return ["Authorization":"Bearer " + TokenService.shared.getAccessToken()!]
         }
     }
     
@@ -333,10 +393,14 @@ enum UserProvider: URLRequestBuilder{
             return encodeToJSON(model: email)
         case .findUsers(model: let model):
             return encodeToJSON(model: model)
-        case .topRatedGuids(model: let model):
-            return encodeToJSON(model: model)
         default:
             return nil
         }
     }
+}
+
+struct NetworkFetcher{
+    let loginFetcher = NetworkManager<LoginProvider>()
+    let tourFetcher = NetworkManager<TourProvider>()
+    let userFetcher = NetworkManager<UserProvider>()
 }

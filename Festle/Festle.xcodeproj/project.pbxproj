@@ -22,6 +22,8 @@
 		5C32112224D8AB7B0041732C /* TVSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32111B24D8AB7B0041732C /* TVSceneModels.swift */; };
 		5C32112324D8AB7B0041732C /* TVSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32111C24D8AB7B0041732C /* TVSceneViewController.swift */; };
 		5C32112424D8AB7B0041732C /* TVSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32111D24D8AB7B0041732C /* TVSceneInteractor.swift */; };
+		5C34C9F3250160E400CA8E6A /* MyImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34C9F2250160E400CA8E6A /* MyImagePicker.swift */; };
+		5C34C9F725054F0D00CA8E6A /* RequestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34C9F625054F0D00CA8E6A /* RequestModels.swift */; };
 		5C35B08A24B1CC1F00F6FB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C35B08924B1CC1F00F6FB0C /* AppDelegate.swift */; };
 		5C35B09524B1CC2000F6FB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C35B09424B1CC2000F6FB0C /* Assets.xcassets */; };
 		5C35B09824B1CC2000F6FB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C35B09624B1CC2000F6FB0C /* LaunchScreen.storyboard */; };
@@ -38,6 +40,7 @@
 		5C49EF6F24C5DC53002B9989 /* GeneralModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C49EF6E24C5DC53002B9989 /* GeneralModels.swift */; };
 		5C49EF7424C5F614002B9989 /* FGuidCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C49EF7324C5F614002B9989 /* FGuidCell.xib */; };
 		5C54785224F9E05300B89611 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54785124F9E05300B89611 /* MyTabBar.swift */; };
+		5C54785624FEB03A00B89611 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54785524FEB03A00B89611 /* UITableViewExtension.swift */; };
 		5C5D4BE124C0DDB6007F35A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D4BE324C0DDB6007F35A0 /* Localizable.strings */; };
 		5C5D4BE624C0DDF7007F35A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D4BE824C0DDF7007F35A0 /* Localizable.strings */; };
 		5C5D4BEB24C20E2E007F35A0 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D4BEA24C20E2E007F35A0 /* CustomSegmentedControl.swift */; };
@@ -128,6 +131,8 @@
 		5C32111B24D8AB7B0041732C /* TVSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSceneModels.swift; sourceTree = "<group>"; };
 		5C32111C24D8AB7B0041732C /* TVSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSceneViewController.swift; sourceTree = "<group>"; };
 		5C32111D24D8AB7B0041732C /* TVSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSceneInteractor.swift; sourceTree = "<group>"; };
+		5C34C9F2250160E400CA8E6A /* MyImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagePicker.swift; sourceTree = "<group>"; };
+		5C34C9F625054F0D00CA8E6A /* RequestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestModels.swift; path = Festle/Services/Models/RequestModels.swift; sourceTree = SOURCE_ROOT; };
 		5C35B08624B1CC1F00F6FB0C /* Festle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Festle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C35B08924B1CC1F00F6FB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C35B09424B1CC2000F6FB0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +151,7 @@
 		5C49EF6E24C5DC53002B9989 /* GeneralModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModels.swift; sourceTree = "<group>"; };
 		5C49EF7324C5F614002B9989 /* FGuidCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FGuidCell.xib; sourceTree = "<group>"; };
 		5C54785124F9E05300B89611 /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
+		5C54785524FEB03A00B89611 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		5C5D4BDD24C0DD57007F35A0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		5C5D4BDE24C0DD58007F35A0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5C5D4BE224C0DDB6007F35A0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -363,6 +369,7 @@
 				5C5D4BEA24C20E2E007F35A0 /* CustomSegmentedControl.swift */,
 				5C32111324D839160041732C /* MyTextField.swift */,
 				5C54785124F9E05300B89611 /* MyTabBar.swift */,
+				5C34C9F2250160E400CA8E6A /* MyImagePicker.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -395,6 +402,7 @@
 				5C5D4C0124C3BEFC007F35A0 /* UIStoryboard.swift */,
 				5C32111124D82B9C0041732C /* NavigationBar.swift */,
 				5CA0479424F4704F003BA911 /* UIImage+darkened.swift */,
+				5C54785524FEB03A00B89611 /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 		5C8B370124CD015F00536BA9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5C34C9F625054F0D00CA8E6A /* RequestModels.swift */,
 				5C8B370224CD01AB00536BA9 /* ResponseModels.swift */,
 				5C8B370424CD01C700536BA9 /* API.swift */,
 				5CDC9CA024F6D12700B463FB /* Models.swift */,
@@ -691,10 +700,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C34C9F3250160E400CA8E6A /* MyImagePicker.swift in Sources */,
 				5CA0477A24F2C781003BA911 /* CreateTourRouter.swift in Sources */,
 				5C35B0B824B1FD3B00F6FB0C /* AuthPopUpView.swift in Sources */,
 				5C32111F24D8AB7B0041732C /* TVScenePresenter.swift in Sources */,
 				5C90B7B124BB3D3D00CB90C8 /* ProfileWorker.swift in Sources */,
+				5C34C9F725054F0D00CA8E6A /* RequestModels.swift in Sources */,
 				5C90B7C124BB3D5D00CB90C8 /* DashboardWorker.swift in Sources */,
 				5C90B7B024BB3D3D00CB90C8 /* ProfilePresenter.swift in Sources */,
 				5C5D4BF224C3B537007F35A0 /* CarouselTourModel.swift in Sources */,
@@ -736,6 +747,7 @@
 				5C89D97624DDB9E400BB810A /* TestData.swift in Sources */,
 				5C32110E24D7365F0041732C /* EditInfoViewController.swift in Sources */,
 				5C90B7A224BB3D1700CB90C8 /* FavoriteWorker.swift in Sources */,
+				5C54785624FEB03A00B89611 /* UITableViewExtension.swift in Sources */,
 				5CA0478C24F2C7C4003BA911 /* TourCardViewController.swift in Sources */,
 				5C8B371224CDF7C800536BA9 /* RegistrationWorker.swift in Sources */,
 				5CA0478824F2C7C4003BA911 /* TourCardPresenter.swift in Sources */,

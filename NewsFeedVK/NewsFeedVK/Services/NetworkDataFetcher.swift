@@ -30,7 +30,6 @@ struct NetworkDataFetcher: DataFetcher{
         
             let decoded = self.decodeJSON(type: FeedResponseWrapped.self, from: data)
             response(decoded?.response)
-
         }
     }
     

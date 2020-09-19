@@ -16,7 +16,13 @@ class ProfilePresenter: ProfilePresentationLogic {
   weak var viewController: ProfileDisplayLogic?
   
   func presentData(response: UserProfile.Model.Response.ResponseType) {
-  
+    switch response {
+    case .presentUserInfo(userInfo: let userInfo):
+        let userViewModel = GetUserInfoViewModel(from: userInfo)
+        viewController?.displayData(viewModel: .displayUserInfo(userInfo: userInfo))
+    }
   }
-  
+    private func GetUserInfoViewModel(from userInfo: DatumUser) -> DatumUser{
+        return userInfo
+    }
 }

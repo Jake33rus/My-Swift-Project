@@ -10,6 +10,7 @@ import Foundation
 
 struct API {
     static let baseURL = "https://www.showingo.ru/api"
+    static let photoURL = "https://www.showingo.ru/photo/"
     
     struct Auth {
         static let login = "/Auth/login"
@@ -31,6 +32,7 @@ struct API {
         static let addtourpointphoto = "/Tour/addtourpointphoto"
         static let removetourphoto = "/Tour/removetourphoto"
         static let streaming = "/Tour/streaming"
+        static let freshtour = "/Tour/freshtour"
     }
     
     struct  User {

@@ -24,6 +24,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## AlamofireEasyLogger
+
+Copyright (c) 2020 jankaltoun <jan.kaltoun@me.com>
+
+Please do whatever you want with this code.
+
+If you link to this repository or mention me as the author, it will make me happy!
+
 ## AppAuth
 
 
@@ -748,6 +756,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    See the License for the specific language governing permissions and
    limitations under the License.
 
+
+## GoogleMaps
+
+Copyright 2020 Google
+
+## GooglePlaces
+
+Copyright 2020 Google
 
 ## GoogleSignIn
 

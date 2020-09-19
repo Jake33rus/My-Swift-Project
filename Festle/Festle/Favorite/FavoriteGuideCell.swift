@@ -10,7 +10,7 @@ import UIKit
 
 class FavoriteGuideCell: UITableViewCell {
 
-    @IBOutlet weak var photo: UIImageView!{
+    @IBOutlet weak var photo: WebImageView!{
         didSet{
             photo?.layer.cornerRadius = photo.frame.size.height / 2
             photo?.clipsToBounds = true

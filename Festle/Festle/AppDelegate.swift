@@ -10,6 +10,9 @@ import UIKit
 import IQKeyboardManagerSwift
 import FBSDKCoreKit
 import GoogleSignIn
+import GoogleMaps
+import GooglePlaces
+import AlamofireEasyLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -18,7 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //MARK: Request logging
+        
+        //MARK: Add GoogleMaps API key
+        GMSServices.provideAPIKey("AIzaSyBgeIFuwiU1YubjXSDBaMjZFZyI2xUwzyY")
+        GMSPlacesClient.provideAPIKey("AIzaSyBgeIFuwiU1YubjXSDBaMjZFZyI2xUwzyY")
+        
         IQKeyboardManager.shared.enable = true
+        
+        //MARK: Skip LoginVC
         ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
         let accessToken: String? = TokenService.shared.getAccessToken()
         if accessToken != nil{

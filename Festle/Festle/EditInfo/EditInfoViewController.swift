@@ -15,6 +15,8 @@ protocol EditInfoDisplayLogic: class {
 
 class EditInfoViewController: UIViewController, EditInfoDisplayLogic {
     
+    var userInfo: DatumUser?
+    
     @IBOutlet weak var saveButton: UIButton!{
         didSet{
             saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
@@ -86,14 +88,14 @@ class EditInfoViewController: UIViewController, EditInfoDisplayLogic {
             birthdayLabel.text = NSLocalizedString("Birthday", comment: "")
         }
     }
-    @IBOutlet weak var sexLabel: UILabel!{
+    @IBOutlet weak var cityLabel: UILabel!{
         didSet{
-            sexLabel.text = NSLocalizedString("Sex", comment: "")
+            cityLabel.text = NSLocalizedString("City", comment: "")
         }
     }
     var interactor: EditInfoBusinessLogic?
-  var router: (NSObjectProtocol & EditInfoRoutingLogic)?
-
+    var router: (NSObjectProtocol & EditInfoRoutingLogic)?
+    var imageIsChanged = false
     
   // MARK: Object lifecycle
   
@@ -129,12 +131,64 @@ class EditInfoViewController: UIViewController, EditInfoDisplayLogic {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+    displayInfo()
   }
   
   func displayData(viewModel: EditInfo.Model.ViewModel.ViewModelData) {
-
+    switch viewModel {
+    case .displaySuccessUpdate(info: let info):
+        self.displayAboutSuccessUpdate(info: info)
+    }
   }
   
+    func displayAboutSuccessUpdate(info: String){
+        let alert = UIAlertController(title: "Update photo",
+                                      message: info,
+                                      preferredStyle: .alert)
+        let okB = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okB)
+        self.present(alert, animated: true)
+    }
+    
+    func displayInfo(){
+        if(userInfo != nil){
+            fNameTF.text = userInfo?.nickname
+            sNameTF.text = userInfo?.nickname
+            cityTF.text = userInfo?.city
+            bdTF.text = ""
+            langTf.text = ""
+            aboutMeTV.text = userInfo?.about
+        }
+    }
+    
+    @IBAction func showImagePicker(_ sender: UIButton) {
+        self.imagePicker.present(from: sender)
+    }
+    
     @IBAction func saveButPress(_ sender: Any) {
+        let newInfo = ChangeUserRequest.init(nickname: "\(fNameTF.text ?? "") \(sNameTF.text ?? "")",
+                                             email: userInfo!.email,
+                                             isGuide: userInfo!.isGuide,
+                                             city: cityTF.text ?? "",
+                                             phone: "",
+                                             about: aboutMeTV.text,
+                                             applicationLanguage: langTf.text ?? "",
+                                             voiceLanguage: "RU",
+                                             sex: 1)
+        interactor?.makeRequest(request: .saveNewInfo(model: newInfo))
+    }
+    
+    var imagePicker: ImagePicker!
+    
+}
+// MARK: Work with image
+extension EditInfoViewController:ImagePickerDelegate {
+    func didSelect(image: UIImage?) {
+        if(image != nil){
+            self.imageIsChanged = true
+            self.userPhoto.image = image
+            self.interactor?.makeRequest(request: .updatePhoto(nick: sNameTF.text!, photo: image!))
+        }
     }
 }
