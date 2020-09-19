@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ONETRAK_iOS_Intern_TEST" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rq4-x9-Ogm" customClass="CircleProgressView" customModule="ONETRAK_iOS_Intern_TEST" customModuleProvider="target">
+                                <rect key="frame" x="87" y="148" width="240" height="240"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rq4-x9-Ogm" secondAttribute="height" multiplier="1:1" id="UAt-1t-1tQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="rtw-Md-HKw"/>
+                                    <constraint firstAttribute="height" constant="240" id="uDU-iz-Z5Z"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="Xx8-ls-Szw"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YLu-Wc-1c9">
+                                <rect key="frame" x="40" y="565" width="334" height="114"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3v-YM-cKH">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <color key="tintColor" red="0.60056948659999998" green="0.63449424509999997" blue="0.67843842509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="max, value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ICX-kx-i6w">
+                                        <rect key="frame" x="0.0" y="42" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4p-9T-jtQ">
+                                        <rect key="frame" x="0.0" y="84" width="334" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="GO">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapGoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48x-NC-JDn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YLu-Wc-1c9" secondAttribute="bottom" constant="183" id="4cu-RV-OOM"/>
+                            <constraint firstItem="rq4-x9-Ogm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="104" id="JQd-Sn-p3a"/>
+                            <constraint firstItem="YLu-Wc-1c9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MgD-pE-0v1"/>
+                            <constraint firstItem="YLu-Wc-1c9" firstAttribute="top" relation="lessThanOrEqual" secondItem="rq4-x9-Ogm" secondAttribute="bottom" constant="177" id="Pw2-Yp-hDV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YLu-Wc-1c9" secondAttribute="trailing" constant="40" id="kzQ-hX-lXq"/>
+                            <constraint firstItem="YLu-Wc-1c9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="rhe-v3-VIU"/>
+                            <constraint firstItem="rq4-x9-Ogm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tAU-VI-Pzd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="circleProgressBar" destination="rq4-x9-Ogm" id="1Vl-Zg-CXs"/>
+                        <outlet property="goButton" destination="k4p-9T-jtQ" id="mVc-p2-oHE"/>
+                        <outlet property="maxValueTextField" destination="ICX-kx-i6w" id="dta-QE-suO"/>
+                        <outlet property="valueTextField" destination="w3v-YM-cKH" id="ADi-4R-WRt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+</document>
