@@ -1,63 +1,684 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="61s-3V-0yu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T5R-WA-fKV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Ваши чеклисты-->
+        <scene sceneID="8Pn-aP-i4w">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="Ytv-Jd-cq9" customClass="YourCheckListTableVC" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="230" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ks4-8n-8xC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ItJ-F3-Ogx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexBackgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Ytv-Jd-cq9" id="QTw-Uv-NO1"/>
+                            <outlet property="delegate" destination="Ytv-Jd-cq9" id="12l-nL-LhW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ваши чеклисты" id="z82-Hs-Qfg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="s5k-np-bFr">
+                            <color key="tintColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="XJE-7h-QVe" kind="show" id="rD3-nA-4ym"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdU-o2-NQJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713.04347826086962" y="93.75"/>
+            <point key="canvasLocation" x="2510" y="-498"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="beW-x5-gTM">
+        <!--Calendar DataVC View Controller-->
+        <scene sceneID="tQ4-wG-VRL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="61s-3V-0yu" sceneMemberID="viewController">
+                <viewController id="XJE-7h-QVe" customClass="CalendarDataVCViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tb5-FC-LWH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YA-cP-uUD">
+                                <rect key="frame" x="20" y="108" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.82049180330000004" green="0.82049180330000004" blue="0.82049180330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmE-0D-3Fh">
+                                <rect key="frame" x="20" y="151.5" width="374" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.82049180330000004" green="0.82049180330000004" blue="0.82049180330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PBR-fz-srH" customClass="JTACMonthView" customModule="JTAppleCalendar">
+                                <rect key="frame" x="0.0" y="183" width="414" height="600"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HQV-ZS-Nhe">
+                                    <size key="itemSize" width="49" height="49"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarCell" id="Iup-dC-OL1" customClass="CalendarCell" customModule="Checklists" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fqZ-0D-0I8" customClass="CalendarCell" customModule="Checklists" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1F3-M5-4Lg">
+                                                    <rect key="frame" x="5" y="5" width="39" height="39"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fk1-d3-nwC">
+                                                    <rect key="frame" x="8" y="8" width="33" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1F3-M5-4Lg" secondAttribute="trailing" constant="5" id="B77-mN-hyv"/>
+                                                <constraint firstAttribute="bottom" secondItem="1F3-M5-4Lg" secondAttribute="bottom" constant="5" id="aeN-my-36Z"/>
+                                                <constraint firstItem="1F3-M5-4Lg" firstAttribute="top" secondItem="fqZ-0D-0I8" secondAttribute="top" constant="5" id="pC3-gh-AaP"/>
+                                                <constraint firstItem="1F3-M5-4Lg" firstAttribute="leading" secondItem="fqZ-0D-0I8" secondAttribute="leading" constant="5" id="wnq-9M-GWe"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="fk1-d3-nwC" id="JLR-pJ-cyu"/>
+                                            <outlet property="iconImage" destination="1F3-M5-4Lg" id="1sA-tX-ol7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="ibCalendarDataSource" destination="XJE-7h-QVe" id="o2D-F2-AGI"/>
+                                    <outlet property="ibCalendarDelegate" destination="XJE-7h-QVe" id="QlR-iK-iCe"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R7E-Sz-ZPU"/>
+                        <color key="backgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="PBR-fz-srH" firstAttribute="top" secondItem="KmE-0D-3Fh" secondAttribute="bottom" constant="10" id="EeZ-KZ-2j5"/>
+                            <constraint firstItem="PBR-fz-srH" firstAttribute="leading" secondItem="R7E-Sz-ZPU" secondAttribute="leading" id="RRp-ck-IO0"/>
+                            <constraint firstItem="4YA-cP-uUD" firstAttribute="leading" secondItem="R7E-Sz-ZPU" secondAttribute="leading" constant="20" id="X1Z-8G-Pi1"/>
+                            <constraint firstItem="KmE-0D-3Fh" firstAttribute="leading" secondItem="R7E-Sz-ZPU" secondAttribute="leading" constant="20" id="Z8l-2g-gJ3"/>
+                            <constraint firstItem="R7E-Sz-ZPU" firstAttribute="bottom" secondItem="PBR-fz-srH" secondAttribute="bottom" constant="30" id="aoT-x5-Bod"/>
+                            <constraint firstItem="R7E-Sz-ZPU" firstAttribute="trailing" secondItem="PBR-fz-srH" secondAttribute="trailing" id="nn4-x3-UDz"/>
+                            <constraint firstItem="R7E-Sz-ZPU" firstAttribute="trailing" secondItem="KmE-0D-3Fh" secondAttribute="trailing" constant="20" id="o49-Si-Gnu"/>
+                            <constraint firstItem="4YA-cP-uUD" firstAttribute="top" secondItem="R7E-Sz-ZPU" secondAttribute="top" constant="20" id="qMG-kX-kQA"/>
+                            <constraint firstItem="KmE-0D-3Fh" firstAttribute="top" secondItem="4YA-cP-uUD" secondAttribute="bottom" constant="10" id="sg0-cD-eyZ"/>
+                            <constraint firstItem="R7E-Sz-ZPU" firstAttribute="trailing" secondItem="4YA-cP-uUD" secondAttribute="trailing" constant="20" id="zTJ-gO-ZZt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wXl-Zz-Q8a"/>
+                    <connections>
+                        <outlet property="calendarCollectionView" destination="PBR-fz-srH" id="4PA-f3-HUL"/>
+                        <outlet property="descLabel" destination="KmE-0D-3Fh" id="eHD-43-eQr"/>
+                        <outlet property="nameLabel" destination="4YA-cP-uUD" id="aQ1-9V-htM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0bZ-Ow-dfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3595.652173913044" y="-498.21428571428567"/>
+        </scene>
+        <!--Ваши чеклисты-->
+        <scene sceneID="GS4-zz-j4v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3rO-b9-CfW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ваши чеклисты" id="LAC-fZ-mLu">
+                        <imageReference key="image" image="text.badge.checkmark" catalog="system" symbolScale="large"/>
+                        <color key="badgeColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageReference key="selectedImage" image="text.badge.checkmark" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CJf-FO-qaP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="RwZ-To-abe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Lri-E4-izZ"/>
+                        <segue destination="Ytv-Jd-cq9" kind="relationship" relationship="rootViewController" id="gNc-lr-Ktc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cwm-J0-rOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fm9-yH-xPu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197.10144927536234" y="93.75"/>
+            <point key="canvasLocation" x="1665" y="-498"/>
+        </scene>
+        <!--My Tab Bar Controller-->
+        <scene sceneID="JfJ-xf-rmH">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="T5R-WA-fKV" customClass="MyTabBarController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="4vC-rh-UGb" customClass="STTabbar" customModule="STTabbar">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="centerButtonColor">
+                                <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="centerButtonHeight">
+                                <real key="value" value="60"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="buttonImage">
+                                <imageReference key="value" image="plus" catalog="system" symbolScale="large" renderingMode="original"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tabbarColor">
+                                <color key="value" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3rO-b9-CfW" kind="relationship" relationship="viewControllers" id="EhG-lp-obL"/>
+                        <segue destination="pjN-HX-hvQ" kind="relationship" relationship="viewControllers" id="jvD-aW-KaC"/>
+                        <segue destination="9Cv-St-KN8" kind="show" identifier="newChecklist" id="ng0-RE-b7l"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZxL-Tq-5GT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724.63768115942037" y="-139.28571428571428"/>
+        </scene>
+        <!--Выберите чеклист-->
+        <scene sceneID="knE-sn-nZz">
+            <objects>
+                <tableViewController id="GVw-m5-D3s" customClass="ExampleCheckListTableViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="227" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="634-r2-GGX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexBackgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <connections>
+                            <outlet property="dataSource" destination="GVw-m5-D3s" id="Kno-As-Dca"/>
+                            <outlet property="delegate" destination="GVw-m5-D3s" id="A7M-1E-LCr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Выберите чеклист" id="auO-Pv-zkC">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="bp6-7c-OU9"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mst-Rd-Td2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2508.6956521739135" y="198.88392857142856"/>
+        </scene>
+        <!--New Checklist-->
+        <scene sceneID="5MB-bM-IBA">
+            <objects>
+                <viewController interfaceStyle="light" id="9Cv-St-KN8" customClass="NewChecklist" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="spatial" id="X7g-I5-1H4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KA2-c5-eZs">
+                                <rect key="frame" x="30" y="20" width="364" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBh-Vg-xeI">
+                                <rect key="frame" x="30" y="51.5" width="364" height="34"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p8-Sl-MYg">
+                                <rect key="frame" x="30" y="105.5" width="364" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3v6-qN-bTd">
+                                <rect key="frame" x="30" y="137" width="364" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="f4G-XT-2Ce"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иконка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHH-JH-5Fd">
+                                <rect key="frame" x="30" y="197" width="364" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4c3-iB-36J">
+                                <rect key="frame" x="30" y="339" width="364" height="165"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="tQu-zS-75o">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzd-SF-uhi" customClass="RadioButton" customModule="Checklists" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="DMc-J9-NWx"/>
+                                                    <constraint firstAttribute="width" constant="25" id="KDP-Dp-xPD"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="radioButtonPress:" destination="9Cv-St-KN8" eventType="touchUpInside" id="ft1-mo-hqC"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неделя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-gx-bW4">
+                                                <rect key="frame" x="61" y="0.0" width="303" height="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="fem-T3-fDk">
+                                        <rect key="frame" x="0.0" y="35" width="364" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JON-oo-m4o" customClass="RadioButton" customModule="Checklists" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="bLg-cm-vRB"/>
+                                                    <constraint firstAttribute="width" constant="25" id="mJS-Nw-1ds"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="radioButtonPress:" destination="9Cv-St-KN8" eventType="touchUpInside" id="Kpw-aC-yaq"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Месяц" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmT-Lh-O5J">
+                                                <rect key="frame" x="61" y="0.0" width="303" height="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="oIY-es-1ME">
+                                        <rect key="frame" x="0.0" y="70" width="364" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icc-0D-vQf" customClass="RadioButton" customModule="Checklists" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="8W2-Mb-KvH"/>
+                                                    <constraint firstAttribute="width" constant="25" id="UaL-fu-LRH"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="radioButtonPress:" destination="9Cv-St-KN8" eventType="touchUpInside" id="Vmb-w8-9ay"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полгода" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNM-6h-qtW">
+                                                <rect key="frame" x="61" y="0.0" width="303" height="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Vuw-lN-iHg">
+                                        <rect key="frame" x="0.0" y="105" width="364" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdN-ah-xHK" customClass="RadioButton" customModule="Checklists" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="Ake-Er-pAQ"/>
+                                                    <constraint firstAttribute="height" constant="25" id="bEI-SA-7e3"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="radioButtonPress:" destination="9Cv-St-KN8" eventType="touchUpInside" id="XXG-Is-Eoz"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Год" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAJ-9u-Y8D">
+                                                <rect key="frame" x="61" y="0.0" width="303" height="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="nWB-Cs-f3f">
+                                        <rect key="frame" x="0.0" y="140" width="364" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQK-qg-rog" customClass="RadioButton" customModule="Checklists" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="FIT-MH-AGr"/>
+                                                    <constraint firstAttribute="height" constant="25" id="TO1-Sj-ldD"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                        <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="radioButtonPress:" destination="9Cv-St-KN8" eventType="touchUpInside" id="wLh-j8-Mbp"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Свой вариант" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkm-ln-jkC">
+                                                <rect key="frame" x="61" y="0.0" width="303" height="25"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Длительность" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF4-FB-JjM">
+                                <rect key="frame" x="30" y="308.5" width="364" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpI-Hl-lgt">
+                                <rect key="frame" x="30" y="228.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1xj-zF-IRW"/>
+                                    <constraint firstAttribute="height" constant="60" id="Due-ny-cQ1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="tintColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus.app" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="45" scale="default" weight="thin"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNewIconPress:" destination="9Cv-St-KN8" eventType="touchUpInside" id="ipZ-1X-eeE"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GeQ-8Z-CwZ">
+                                <rect key="frame" x="95" y="228.5" width="299" height="60"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="KlU-dC-vu1"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="eog-aO-QaU">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconCell" id="9rn-nb-Al3" customClass="IconCell" customModule="Checklists" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="iconCell" insetsLayoutMarginsFromSafeArea="NO" id="4Pz-ty-8Wg">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7l-cK-eEE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconImage" destination="j7l-cK-eEE" id="Gtx-mY-Vgh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Cv-St-KN8" id="KuT-L9-r5Q"/>
+                                    <outlet property="delegate" destination="9Cv-St-KN8" id="nhZ-B7-ArO"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtd-wN-FUd">
+                                <rect key="frame" x="40" y="728" width="334" height="60"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GtU-ij-0ZE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Добавить чеклист">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c5S-z1-BE2"/>
+                        <color key="backgroundColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="4p8-Sl-MYg" secondAttribute="trailing" constant="20" id="0MC-h1-mrs"/>
+                            <constraint firstItem="eF4-FB-JjM" firstAttribute="top" secondItem="dpI-Hl-lgt" secondAttribute="bottom" constant="20" id="1pF-8l-XPs"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="Qtd-wN-FUd" secondAttribute="trailing" constant="40" id="2ja-g0-rVM"/>
+                            <constraint firstItem="GeQ-8Z-CwZ" firstAttribute="top" secondItem="IHH-JH-5Fd" secondAttribute="bottom" constant="10" id="73e-Mt-OEA"/>
+                            <constraint firstItem="3v6-qN-bTd" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="30" id="7us-Gh-7RQ"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="GeQ-8Z-CwZ" secondAttribute="trailing" constant="20" id="8EO-yd-Zub"/>
+                            <constraint firstItem="4p8-Sl-MYg" firstAttribute="top" secondItem="kBh-Vg-xeI" secondAttribute="bottom" constant="20" id="9mm-7m-Y1o"/>
+                            <constraint firstItem="eF4-FB-JjM" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="30" id="CVK-3o-aDA"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="3v6-qN-bTd" secondAttribute="trailing" constant="20" id="K4E-Yv-Ary"/>
+                            <constraint firstItem="IHH-JH-5Fd" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="30" id="Mqk-53-bAB"/>
+                            <constraint firstItem="kBh-Vg-xeI" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="30" id="QIo-tg-sdP"/>
+                            <constraint firstItem="4p8-Sl-MYg" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="30" id="U7i-MG-L33"/>
+                            <constraint firstItem="3v6-qN-bTd" firstAttribute="top" secondItem="4p8-Sl-MYg" secondAttribute="bottom" constant="10" id="UQG-MT-hjg"/>
+                            <constraint firstItem="4c3-iB-36J" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="30" id="W5t-K1-KYC"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="eF4-FB-JjM" secondAttribute="trailing" constant="20" id="aBh-aP-Rom"/>
+                            <constraint firstItem="4c3-iB-36J" firstAttribute="top" secondItem="eF4-FB-JjM" secondAttribute="bottom" constant="10" id="b0S-OC-4Hp"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="bottom" secondItem="Qtd-wN-FUd" secondAttribute="bottom" constant="20" id="cUo-ST-Vwm"/>
+                            <constraint firstItem="kBh-Vg-xeI" firstAttribute="top" secondItem="KA2-c5-eZs" secondAttribute="bottom" constant="10" id="dQL-Km-okf"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="kBh-Vg-xeI" secondAttribute="trailing" constant="20" id="dVE-d2-Csv"/>
+                            <constraint firstItem="KA2-c5-eZs" firstAttribute="top" secondItem="c5S-z1-BE2" secondAttribute="top" constant="20" id="h2w-iv-XGf"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="IHH-JH-5Fd" secondAttribute="trailing" constant="20" id="hJu-qZ-gNn"/>
+                            <constraint firstItem="Qtd-wN-FUd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4c3-iB-36J" secondAttribute="bottom" constant="40" id="hK7-5F-xSc"/>
+                            <constraint firstItem="IHH-JH-5Fd" firstAttribute="top" secondItem="3v6-qN-bTd" secondAttribute="bottom" constant="20" id="hst-oU-Y3L"/>
+                            <constraint firstItem="dpI-Hl-lgt" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="30" id="iWK-Xx-kUh"/>
+                            <constraint firstItem="Qtd-wN-FUd" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="40" id="kdA-HZ-wJa"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="KA2-c5-eZs" secondAttribute="trailing" constant="20" id="kyX-M7-LeX"/>
+                            <constraint firstItem="c5S-z1-BE2" firstAttribute="trailing" secondItem="4c3-iB-36J" secondAttribute="trailing" constant="20" id="nOs-ki-6Ad"/>
+                            <constraint firstItem="eF4-FB-JjM" firstAttribute="top" secondItem="GeQ-8Z-CwZ" secondAttribute="bottom" constant="20" id="nl1-Gp-iQS"/>
+                            <constraint firstItem="KA2-c5-eZs" firstAttribute="leading" secondItem="c5S-z1-BE2" secondAttribute="leading" constant="30" id="qfy-RU-Znm"/>
+                            <constraint firstItem="dpI-Hl-lgt" firstAttribute="top" secondItem="IHH-JH-5Fd" secondAttribute="bottom" constant="10" id="qpZ-5c-ozv"/>
+                            <constraint firstItem="GeQ-8Z-CwZ" firstAttribute="leading" secondItem="dpI-Hl-lgt" secondAttribute="trailing" constant="5" id="tLl-6d-b5q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fp7-gb-UYg"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addNewIcon" destination="dpI-Hl-lgt" id="AjB-ek-OWY"/>
+                        <outlet property="descLabel" destination="4p8-Sl-MYg" id="N0b-V6-DHr"/>
+                        <outlet property="descTextField" destination="3v6-qN-bTd" id="D2M-kg-Fpt"/>
+                        <outlet property="durationLabel" destination="eF4-FB-JjM" id="NUm-4b-vVd"/>
+                        <outlet property="iconCollections" destination="GeQ-8Z-CwZ" id="Cvl-nf-4X3"/>
+                        <outlet property="iconLabel" destination="IHH-JH-5Fd" id="b1f-OV-zvx"/>
+                        <outlet property="nameLabel" destination="KA2-c5-eZs" id="TdR-DD-8i5"/>
+                        <outlet property="nameTF" destination="kBh-Vg-xeI" id="UBs-k1-bJL"/>
+                        <outlet property="saveButton" destination="Qtd-wN-FUd" id="UoO-oN-Uxt"/>
+                        <outletCollection property="radioButtons" destination="Wzd-SF-uhi" collectionClass="NSMutableArray" id="QJM-ui-vsg"/>
+                        <outletCollection property="radioButtons" destination="JON-oo-m4o" collectionClass="NSMutableArray" id="Ib6-01-jTW"/>
+                        <outletCollection property="radioButtons" destination="icc-0D-vQf" collectionClass="NSMutableArray" id="bjW-Vj-ejG"/>
+                        <outletCollection property="radioButtons" destination="EdN-ah-xHK" collectionClass="NSMutableArray" id="MND-y7-X8T"/>
+                        <outletCollection property="radioButtons" destination="oQK-qg-rog" collectionClass="NSMutableArray" id="p3Q-CY-2ES"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pH-yZ-Kpx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725" y="745"/>
+        </scene>
+        <!--Новые чеклисты-->
+        <scene sceneID="bSk-HO-o7J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pjN-HX-hvQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новые чеклисты" id="kgV-TF-x8n">
+                        <imageReference key="image" image="list.bullet.rectangle" catalog="system" symbolScale="large"/>
+                        <color key="badgeColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageReference key="selectedImage" image="list.bullet.rectangle" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" backIndicatorImage="arrowshape.turn.up.backward" catalog="system" id="6yW-cd-sdb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" red="0.066521516389999993" green="0.066521516389999993" blue="0.066521516389999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GVw-m5-D3s" kind="relationship" relationship="rootViewController" id="woc-Kn-Yos"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0K-jR-c5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="199"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4vC-rh-UGb">
+            <size key="intrinsicContentSize" width="-1" height="83"/>
+        </designable>
+        <designable name="EdN-ah-xHK">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="JON-oo-m4o">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Wzd-SF-uhi">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="icc-0D-vQf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="oQK-qg-rog">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
+        <image name="text.badge.checkmark" catalog="system" width="128" height="109"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

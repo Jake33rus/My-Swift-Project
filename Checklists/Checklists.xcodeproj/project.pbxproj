@@ -3,29 +3,73 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39BA4406B679300FF467A4B4 /* Pods_Checklists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B886704C5D900CE66ECA563 /* Pods_Checklists.framework */; };
+		5C081B4C251D039100A97E78 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B4B251D039100A97E78 /* Checklist.swift */; };
+		5C081B4F251D03A100A97E78 /* Chalange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B4E251D03A100A97E78 /* Chalange.swift */; };
+		5C081B53251D053F00A97E78 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B52251D053F00A97E78 /* StringExtensions.swift */; };
+		5C081B56251D05C200A97E78 /* Emojies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B55251D05C200A97E78 /* Emojies.swift */; };
+		5C081B5A251D632C00A97E78 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B58251D632C00A97E78 /* TableViewCell.swift */; };
+		5C081B5B251D632C00A97E78 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C081B59251D632C00A97E78 /* TableViewCell.xib */; };
+		5C081B5F251D64BD00A97E78 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B5D251D64BD00A97E78 /* CollectionViewCell.swift */; };
+		5C081B60251D64BD00A97E78 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C081B5E251D64BD00A97E78 /* CollectionViewCell.xib */; };
+		5C081B67251D751000A97E78 /* ExampleCheckListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B66251D751000A97E78 /* ExampleCheckListTableViewController.swift */; };
+		5C081B6E251E02BD00A97E78 /* YourCheckListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B6D251E02BD00A97E78 /* YourCheckListTableVC.swift */; };
+		5C081B73251E136600A97E78 /* VolumeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C081B72251E136600A97E78 /* VolumeButton.swift */; };
+		5C55BE0B25260F2400F07F38 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C55BE0A25260F2400F07F38 /* CalendarCell.swift */; };
+		5C55BE0E25260FC800F07F38 /* CalendarDataVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C55BE0D25260FC800F07F38 /* CalendarDataVCViewController.swift */; };
+		5C55BE122526151F00F07F38 /* MonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C55BE112526151F00F07F38 /* MonthHeader.swift */; };
+		5C55BE162526153600F07F38 /* MonthHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C55BE152526153600F07F38 /* MonthHeader.xib */; };
+		5C55BE1D2526215C00F07F38 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C55BE1C2526215C00F07F38 /* UIImageExtensions.swift */; };
 		5C5AA3722516AF5A00B82822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AA3712516AF5A00B82822 /* AppDelegate.swift */; };
 		5C5AA3742516AF5A00B82822 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AA3732516AF5A00B82822 /* SceneDelegate.swift */; };
-		5C5AA3762516AF5A00B82822 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AA3752516AF5A00B82822 /* ViewController.swift */; };
 		5C5AA3792516AF5A00B82822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5AA3772516AF5A00B82822 /* Main.storyboard */; };
 		5C5AA37C2516AF5A00B82822 /* Checklists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AA37A2516AF5A00B82822 /* Checklists.xcdatamodeld */; };
 		5C5AA37E2516AF5B00B82822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5AA37D2516AF5B00B82822 /* Assets.xcassets */; };
 		5C5AA3812516AF5B00B82822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5AA37F2516AF5B00B82822 /* LaunchScreen.storyboard */; };
+		5C5F388E251F834C006F93E9 /* MyRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F388D251F834C006F93E9 /* MyRadioButton.swift */; };
+		5C5F3891251F8643006F93E9 /* NewChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F3890251F8643006F93E9 /* NewChecklist.swift */; };
+		5C5F3896251F978A006F93E9 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F3895251F978A006F93E9 /* IconCell.swift */; };
+		5C5F389F252397BD006F93E9 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F389E252397BD006F93E9 /* MyTabBarController.swift */; };
+		8F1BC960FF9F375462C4FD84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBB5E27175B22B9F48BC74C5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0925B5325CAACAF7121DCC0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		209B07FF15F99BDCDA9AC667 /* Pods-Checklists.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklists.debug.xcconfig"; path = "Target Support Files/Pods-Checklists/Pods-Checklists.debug.xcconfig"; sourceTree = "<group>"; };
+		4B886704C5D900CE66ECA563 /* Pods_Checklists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checklists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C081B4B251D039100A97E78 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		5C081B4E251D03A100A97E78 /* Chalange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chalange.swift; sourceTree = "<group>"; };
+		5C081B52251D053F00A97E78 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		5C081B55251D05C200A97E78 /* Emojies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emojies.swift; sourceTree = "<group>"; };
+		5C081B58251D632C00A97E78 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5C081B59251D632C00A97E78 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		5C081B5D251D64BD00A97E78 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		5C081B5E251D64BD00A97E78 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		5C081B66251D751000A97E78 /* ExampleCheckListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCheckListTableViewController.swift; sourceTree = "<group>"; };
+		5C081B6D251E02BD00A97E78 /* YourCheckListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCheckListTableVC.swift; sourceTree = "<group>"; };
+		5C081B72251E136600A97E78 /* VolumeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VolumeButton.swift; path = Checklists/UI/VolumeButton.swift; sourceTree = SOURCE_ROOT; };
+		5C55BE0A25260F2400F07F38 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		5C55BE0D25260FC800F07F38 /* CalendarDataVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataVCViewController.swift; sourceTree = "<group>"; };
+		5C55BE112526151F00F07F38 /* MonthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MonthHeader.swift; path = Checklists/UI/Calendar/Header/MonthHeader.swift; sourceTree = SOURCE_ROOT; };
+		5C55BE152526153600F07F38 /* MonthHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MonthHeader.xib; path = Checklists/UI/Calendar/Header/MonthHeader.xib; sourceTree = SOURCE_ROOT; };
+		5C55BE1C2526215C00F07F38 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		5C5AA36E2516AF5A00B82822 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5AA3712516AF5A00B82822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C5AA3732516AF5A00B82822 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5C5AA3752516AF5A00B82822 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C5AA3782516AF5A00B82822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C5AA37B2516AF5A00B82822 /* Checklists.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Checklists.xcdatamodel; sourceTree = "<group>"; };
 		5C5AA37D2516AF5B00B82822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C5AA3802516AF5B00B82822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C5AA3822516AF5B00B82822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C5F388D251F834C006F93E9 /* MyRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyRadioButton.swift; path = Checklists/UI/MyRadioButton.swift; sourceTree = SOURCE_ROOT; };
+		5C5F3890251F8643006F93E9 /* NewChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChecklist.swift; sourceTree = "<group>"; };
+		5C5F3895251F978A006F93E9 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IconCell.swift; path = Checklists/UI/IconCell.swift; sourceTree = SOURCE_ROOT; };
+		5C5F389E252397BD006F93E9 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyTabBarController.swift; path = Checklists/UI/MyTabBarController.swift; sourceTree = SOURCE_ROOT; };
+		BB37C59A4E6A0B551A8B8803 /* Pods-Checklists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklists.release.xcconfig"; path = "Target Support Files/Pods-Checklists/Pods-Checklists.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +77,84 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BA4406B679300FF467A4B4 /* Pods_Checklists.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C8AD205D4D08FBC1B1421CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B886704C5D900CE66ECA563 /* Pods_Checklists.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C081B4A251D037C00A97E78 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C081B4B251D039100A97E78 /* Checklist.swift */,
+				5C081B4E251D03A100A97E78 /* Chalange.swift */,
+				5C081B55251D05C200A97E78 /* Emojies.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C081B51251D052000A97E78 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5C081B52251D053F00A97E78 /* StringExtensions.swift */,
+				5C55BE1C2526215C00F07F38 /* UIImageExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5C081B6B251E027F00A97E78 /* ExampleCheckList */ = {
+			isa = PBXGroup;
+			children = (
+				5C081B66251D751000A97E78 /* ExampleCheckListTableViewController.swift */,
+			);
+			path = ExampleCheckList;
+			sourceTree = "<group>";
+		};
+		5C081B6C251E029400A97E78 /* YourCheckLists */ = {
+			isa = PBXGroup;
+			children = (
+				5C081B6D251E02BD00A97E78 /* YourCheckListTableVC.swift */,
+			);
+			path = YourCheckLists;
+			sourceTree = "<group>";
+		};
+		5C081B71251E133900A97E78 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5C5F3879251EB68C006F93E9 /* Calendar */,
+				5C5F3895251F978A006F93E9 /* IconCell.swift */,
+				5C081B72251E136600A97E78 /* VolumeButton.swift */,
+				5C5F388D251F834C006F93E9 /* MyRadioButton.swift */,
+				5C5F389E252397BD006F93E9 /* MyTabBarController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5C55BE10252614E200F07F38 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				5C55BE112526151F00F07F38 /* MonthHeader.swift */,
+				5C55BE152526153600F07F38 /* MonthHeader.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		5C5AA3652516AF5A00B82822 = {
 			isa = PBXGroup;
 			children = (
 				5C5AA3702516AF5A00B82822 /* Checklists */,
 				5C5AA36F2516AF5A00B82822 /* Products */,
+				F183EC1A2E26003DC8931A5E /* Pods */,
+				1C8AD205D4D08FBC1B1421CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +169,61 @@
 		5C5AA3702516AF5A00B82822 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				5C081B71251E133900A97E78 /* UI */,
+				5C081B6C251E029400A97E78 /* YourCheckLists */,
+				5C081B6B251E027F00A97E78 /* ExampleCheckList */,
+				5C081B51251D052000A97E78 /* Extensions */,
+				5C081B4A251D037C00A97E78 /* Models */,
+				5CDB39D5251948220072D8DF /* Cells */,
+				5C5F3890251F8643006F93E9 /* NewChecklist.swift */,
 				5C5AA3712516AF5A00B82822 /* AppDelegate.swift */,
 				5C5AA3732516AF5A00B82822 /* SceneDelegate.swift */,
-				5C5AA3752516AF5A00B82822 /* ViewController.swift */,
 				5C5AA3772516AF5A00B82822 /* Main.storyboard */,
 				5C5AA37D2516AF5B00B82822 /* Assets.xcassets */,
 				5C5AA37F2516AF5B00B82822 /* LaunchScreen.storyboard */,
 				5C5AA3822516AF5B00B82822 /* Info.plist */,
 				5C5AA37A2516AF5A00B82822 /* Checklists.xcdatamodeld */,
+				8B38CB6E280FB34EC9320D3F /* Resources */,
 			);
 			path = Checklists;
+			sourceTree = "<group>";
+		};
+		5C5F3879251EB68C006F93E9 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				5C55BE10252614E200F07F38 /* Header */,
+				5C55BE0A25260F2400F07F38 /* CalendarCell.swift */,
+				5C55BE0D25260FC800F07F38 /* CalendarDataVCViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		5CDB39D5251948220072D8DF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5C081B58251D632C00A97E78 /* TableViewCell.swift */,
+				5C081B59251D632C00A97E78 /* TableViewCell.xib */,
+				5C081B5D251D64BD00A97E78 /* CollectionViewCell.swift */,
+				5C081B5E251D64BD00A97E78 /* CollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8B38CB6E280FB34EC9320D3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5E27175B22B9F48BC74C5 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F183EC1A2E26003DC8931A5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				209B07FF15F99BDCDA9AC667 /* Pods-Checklists.debug.xcconfig */,
+				BB37C59A4E6A0B551A8B8803 /* Pods-Checklists.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C5AA3852516AF5B00B82822 /* Build configuration list for PBXNativeTarget "Checklists" */;
 			buildPhases = (
+				E684D6AC08B9E3D1A0F4619F /* [CP] Check Pods Manifest.lock */,
 				5C5AA36A2516AF5A00B82822 /* Sources */,
 				5C5AA36B2516AF5A00B82822 /* Frameworks */,
 				5C5AA36C2516AF5A00B82822 /* Resources */,
+				A4B798BF01DFF76D16AAA45D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,22 +286,88 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5AA3812516AF5B00B82822 /* LaunchScreen.storyboard in Resources */,
+				5C081B5B251D632C00A97E78 /* TableViewCell.xib in Resources */,
 				5C5AA37E2516AF5B00B82822 /* Assets.xcassets in Resources */,
 				5C5AA3792516AF5A00B82822 /* Main.storyboard in Resources */,
+				5C081B60251D64BD00A97E78 /* CollectionViewCell.xib in Resources */,
+				5C55BE162526153600F07F38 /* MonthHeader.xib in Resources */,
+				8F1BC960FF9F375462C4FD84 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4B798BF01DFF76D16AAA45D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Checklists/Pods-Checklists-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Checklists/Pods-Checklists-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Checklists/Pods-Checklists-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E684D6AC08B9E3D1A0F4619F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Checklists-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C5AA36A2516AF5A00B82822 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C55BE122526151F00F07F38 /* MonthHeader.swift in Sources */,
+				5C081B5F251D64BD00A97E78 /* CollectionViewCell.swift in Sources */,
+				5C55BE0B25260F2400F07F38 /* CalendarCell.swift in Sources */,
+				5C5F389F252397BD006F93E9 /* MyTabBarController.swift in Sources */,
+				5C081B73251E136600A97E78 /* VolumeButton.swift in Sources */,
+				5C081B4C251D039100A97E78 /* Checklist.swift in Sources */,
 				5C5AA37C2516AF5A00B82822 /* Checklists.xcdatamodeld in Sources */,
-				5C5AA3762516AF5A00B82822 /* ViewController.swift in Sources */,
+				5C55BE1D2526215C00F07F38 /* UIImageExtensions.swift in Sources */,
+				5C081B6E251E02BD00A97E78 /* YourCheckListTableVC.swift in Sources */,
+				5C081B5A251D632C00A97E78 /* TableViewCell.swift in Sources */,
+				5C081B53251D053F00A97E78 /* StringExtensions.swift in Sources */,
+				5C5F3891251F8643006F93E9 /* NewChecklist.swift in Sources */,
+				5C081B56251D05C200A97E78 /* Emojies.swift in Sources */,
 				5C5AA3722516AF5A00B82822 /* AppDelegate.swift in Sources */,
+				5C5F3896251F978A006F93E9 /* IconCell.swift in Sources */,
+				5C55BE0E25260FC800F07F38 /* CalendarDataVCViewController.swift in Sources */,
+				5C081B4F251D03A100A97E78 /* Chalange.swift in Sources */,
 				5C5AA3742516AF5A00B82822 /* SceneDelegate.swift in Sources */,
+				5C081B67251D751000A97E78 /* ExampleCheckListTableViewController.swift in Sources */,
+				5C5F388E251F834C006F93E9 /* MyRadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +388,14 @@
 				5C5AA3802516AF5B00B82822 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CBB5E27175B22B9F48BC74C5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0925B5325CAACAF7121DCC0D /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -287,6 +519,7 @@
 		};
 		5C5AA3862516AF5B00B82822 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 209B07FF15F99BDCDA9AC667 /* Pods-Checklists.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +539,7 @@
 		};
 		5C5AA3872516AF5B00B82822 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB37C59A4E6A0B551A8B8803 /* Pods-Checklists.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
