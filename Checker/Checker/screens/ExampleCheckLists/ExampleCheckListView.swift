@@ -5,4 +5,8 @@
 //  Created by Евгений Уланов on 27.03.2021.
 //
 
-import Foundation
+import UIKit
+
+final class ExampleCheckListView: UIViewController {
+    
+}
