@@ -7,5 +7,5 @@ target 'Checklists' do
 
   # Pods for Checklists
   pod 'STTabbar'
-  pod 'JTAppleCalendar', '~> 8.0'
+  pod 'JTAppleCalendar'
 end

@@ -1,0 +1,20 @@
+PODS:
+  - JTAppleCalendar (8.0.3)
+  - STTabbar (0.1.0)
+
+DEPENDENCIES:
+  - JTAppleCalendar
+  - STTabbar
+
+SPEC REPOS:
+  trunk:
+    - JTAppleCalendar
+    - STTabbar
+
+SPEC CHECKSUMS:
+  JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
+  STTabbar: fe93da755010233b348b2d0147c43bb1bef290fa
+
+PODFILE CHECKSUM: f4a5fa02866ecec75f9a3b81d75cf00fa20ad0eb
+
+COCOAPODS: 1.10.0

@@ -125,6 +125,4 @@ extension NewChecklist: UICollectionViewDelegate, UICollectionViewDataSource{
         cell.layer.cornerRadius = 10
         return cell
     }
-    
-    
 }
